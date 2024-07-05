@@ -1,0 +1,1720 @@
+.Material-NST {
+    color: #db9191;
+    background: rgb(104,0,0);
+    background: linear-gradient(325deg, rgb(104,0,0) 0%, #7b0012 50%, rgb(104,0,0) 100%);
+}
+.Material-AIR {
+    color: rgb(168, 204, 234);
+    background: rgb(41, 77, 107);
+    background: linear-gradient(325deg, rgb(41, 77, 107) 0%, rgb(66, 102, 132) 50%, rgb(41, 77, 107) 100%);
+}
+.Material-MHL {
+    color: rgb(168, 204, 234);
+    background: rgb(41, 77, 107);
+    background: linear-gradient(325deg, rgb(41, 77, 107) 0%, rgb(66, 102, 132) 50%, rgb(41, 77, 107) 100%);
+}
+.Material-GCH {
+    color: rgb(255, 168, 127);
+    background: rgb(153, 41, 0);
+    background: linear-gradient(325deg, rgb(153, 41, 0) 0%, rgb(178, 66, 25) 50%, rgb(153, 41, 0) 100%);
+}
+.Material-GEN {
+    color: rgb(255, 168, 127);
+    background: rgb(153, 41, 0);
+    background: linear-gradient(325deg, rgb(153, 41, 0) 0%, rgb(178, 66, 25) 50%, rgb(153, 41, 0) 100%);
+}
+.Material-GNZ {
+    color: rgb(255, 168, 127);
+    background: rgb(153, 41, 0);
+    background: linear-gradient(325deg, rgb(153, 41, 0) 0%, rgb(178, 66, 25) 50%, rgb(153, 41, 0) 100%);
+}
+.Material-HNZ {
+    color: rgb(255, 168, 127);
+    background: rgb(153, 41, 0);
+    background: linear-gradient(325deg, rgb(153, 41, 0) 0%, rgb(178, 66, 25) 50%, rgb(153, 41, 0) 100%);
+}
+.Material-HPR {
+    color: rgb(255, 168, 127);
+    background: rgb(153, 41, 0);
+    background: linear-gradient(325deg, rgb(153, 41, 0) 0%, rgb(178, 66, 25) 50%, rgb(153, 41, 0) 100%);
+}
+.Material-HTE {
+    color: rgb(255, 168, 127);
+    background: rgb(153, 41, 0);
+    background: linear-gradient(325deg, rgb(153, 41, 0) 0%, rgb(178, 66, 25) 50%, rgb(153, 41, 0) 100%);
+}
+.Material-HYR {
+    color: rgb(255, 168, 127);
+    background: rgb(153, 41, 0);
+    background: linear-gradient(325deg, rgb(153, 41, 0) 0%, rgb(178, 66, 25) 50%, rgb(153, 41, 0) 100%);
+}
+.Material-LFE {
+    color: rgb(255, 168, 127);
+    background: rgb(153, 41, 0);
+    background: linear-gradient(325deg, rgb(153, 41, 0) 0%, rgb(178, 66, 25) 50%, rgb(153, 41, 0) 100%);
+}
+.Material-LFP {
+    color: rgb(255, 168, 127);
+    background: rgb(153, 41, 0);
+    background: linear-gradient(325deg, rgb(153, 41, 0) 0%, rgb(178, 66, 25) 50%, rgb(153, 41, 0) 100%);
+}
+.Material-MFE {
+    color: rgb(255, 168, 127);
+    background: rgb(153, 41, 0);
+    background: linear-gradient(325deg, rgb(153, 41, 0) 0%, rgb(178, 66, 25) 50%, rgb(153, 41, 0) 100%);
+}
+.Material-NOZ {
+    color: rgb(255, 168, 127);
+    background: rgb(153, 41, 0);
+    background: linear-gradient(325deg, rgb(153, 41, 0) 0%, rgb(178, 66, 25) 50%, rgb(153, 41, 0) 100%);
+}
+.Material-QCR {
+    color: rgb(255, 168, 127);
+    background: rgb(153, 41, 0);
+    background: linear-gradient(325deg, rgb(153, 41, 0) 0%, rgb(178, 66, 25) 50%, rgb(153, 41, 0) 100%);
+}
+.Material-RCS {
+    color: rgb(255, 168, 127);
+    background: rgb(153, 41, 0);
+    background: linear-gradient(325deg, rgb(153, 41, 0) 0%, rgb(178, 66, 25) 50%, rgb(153, 41, 0) 100%);
+}
+.Material-RCT {
+    color: rgb(255, 168, 127);
+    background: rgb(153, 41, 0);
+    background: linear-gradient(325deg, rgb(153, 41, 0) 0%, rgb(178, 66, 25) 50%, rgb(153, 41, 0) 100%);
+}
+.Material-SFE {
+    color: rgb(255, 168, 127);
+    background: rgb(153, 41, 0);
+    background: linear-gradient(325deg, rgb(153, 41, 0) 0%, rgb(178, 66, 25) 50%, rgb(153, 41, 0) 100%);
+}
+.Material-DA {
+    color: rgb(255, 255, 146);
+    background: rgb(129, 98, 19);
+    background: linear-gradient(325deg, rgb(129, 98, 19) 0%, rgb(154, 123, 44) 50%, rgb(129, 98, 19) 100%);
+}
+.Material-DD {
+    color: rgb(255, 255, 146);
+    background: rgb(129, 98, 19);
+    background: linear-gradient(325deg, rgb(129, 98, 19) 0%, rgb(154, 123, 44) 50%, rgb(129, 98, 19) 100%);
+}
+.Material-DV {
+    color: rgb(255, 255, 146);
+    background: rgb(129, 98, 19);
+    background: linear-gradient(325deg, rgb(129, 98, 19) 0%, rgb(154, 123, 44) 50%, rgb(129, 98, 19) 100%);
+}
+.Material-EDC {
+    color: rgb(255, 255, 146);
+    background: rgb(129, 98, 19);
+    background: linear-gradient(325deg, rgb(129, 98, 19) 0%, rgb(154, 123, 44) 50%, rgb(129, 98, 19) 100%);
+}
+.Material-NN {
+    color: rgb(255, 255, 146);
+    background: rgb(129, 98, 19);
+    background: linear-gradient(325deg, rgb(129, 98, 19) 0%, rgb(154, 123, 44) 50%, rgb(129, 98, 19) 100%);
+}
+.Material-OS {
+    color: rgb(255, 255, 146);
+    background: rgb(129, 98, 19);
+    background: linear-gradient(325deg, rgb(129, 98, 19) 0%, rgb(154, 123, 44) 50%, rgb(129, 98, 19) 100%);
+}
+.Material-AEF {
+    color: rgb(168, 204, 234);
+    background: rgb(41, 77, 107);
+    background: linear-gradient(325deg, rgb(41, 77, 107) 0%, rgb(66, 102, 132) 50%, rgb(41, 77, 107) 100%);
+}
+.Material-PWO {
+    color: #db9191;
+    background: rgb(104,0,0);
+    background: linear-gradient(325deg, rgb(104,0,0) 0%, #7b0012 50%, rgb(104,0,0) 100%);
+}
+.Material-REP {
+    color: #db9191;
+    background: rgb(104,0,0);
+    background: linear-gradient(325deg, rgb(104,0,0) 0%, #7b0012 50%, rgb(104,0,0) 100%);
+}
+.Material-SC {
+    color: #db9191;
+    background: rgb(104,0,0);
+    background: linear-gradient(325deg, rgb(104,0,0) 0%, #7b0012 50%, rgb(104,0,0) 100%);
+}
+.Material-VG {
+    color: #db9191;
+    background: rgb(104,0,0);
+    background: linear-gradient(325deg, rgb(104,0,0) 0%, #7b0012 50%, rgb(104,0,0) 100%);
+}
+.Material-WIN {
+    color: #db9191;
+    background: rgb(104,0,0);
+    background: linear-gradient(325deg, rgb(104,0,0) 0%, #7b0012 50%, rgb(104,0,0) 100%);
+}
+.Material-AEN {
+    color: rgb(255, 168, 127);
+    background: rgb(153, 41, 0);
+    background: linear-gradient(325deg, rgb(153, 41, 0) 0%, rgb(178, 66, 25) 50%, rgb(153, 41, 0) 100%);
+}
+.Material-AFP {
+    color: rgb(255, 168, 127);
+    background: rgb(153, 41, 0);
+    background: linear-gradient(325deg, rgb(153, 41, 0) 0%, rgb(178, 66, 25) 50%, rgb(153, 41, 0) 100%);
+}
+.Material-AFR {
+    color: rgb(255, 168, 127);
+    background: rgb(153, 41, 0);
+    background: linear-gradient(325deg, rgb(153, 41, 0) 0%, rgb(178, 66, 25) 50%, rgb(153, 41, 0) 100%);
+}
+.Material-ANZ {
+    color: rgb(255, 168, 127);
+    background: rgb(153, 41, 0);
+    background: linear-gradient(325deg, rgb(153, 41, 0) 0%, rgb(178, 66, 25) 50%, rgb(153, 41, 0) 100%);
+}
+.Material-BFP {
+    color: rgb(255, 168, 127);
+    background: rgb(153, 41, 0);
+    background: linear-gradient(325deg, rgb(153, 41, 0) 0%, rgb(178, 66, 25) 50%, rgb(153, 41, 0) 100%);
+}
+.Material-BFR {
+    color: rgb(255, 168, 127);
+    background: rgb(153, 41, 0);
+    background: linear-gradient(325deg, rgb(153, 41, 0) 0%, rgb(178, 66, 25) 50%, rgb(153, 41, 0) 100%);
+}
+.Material-CHA {
+    color: rgb(255, 168, 127);
+    background: rgb(153, 41, 0);
+    background: linear-gradient(325deg, rgb(153, 41, 0) 0%, rgb(178, 66, 25) 50%, rgb(153, 41, 0) 100%);
+}
+.Material-ENG {
+    color: rgb(255, 168, 127);
+    background: rgb(153, 41, 0);
+    background: linear-gradient(325deg, rgb(153, 41, 0) 0%, rgb(178, 66, 25) 50%, rgb(153, 41, 0) 100%);
+}
+.Material-FSE {
+    color: rgb(255, 168, 127);
+    background: rgb(153, 41, 0);
+    background: linear-gradient(325deg, rgb(153, 41, 0) 0%, rgb(178, 66, 25) 50%, rgb(153, 41, 0) 100%);
+}
+.Material-DEC {
+    color: rgb(168, 204, 234);
+    background: rgb(41, 77, 107);
+    background: linear-gradient(325deg, rgb(41, 77, 107) 0%, rgb(66, 102, 132) 50%, rgb(41, 77, 107) 100%);
+}
+.Material-FC {
+    color: rgb(168, 204, 234);
+    background: rgb(41, 77, 107);
+    background: linear-gradient(325deg, rgb(41, 77, 107) 0%, rgb(66, 102, 132) 50%, rgb(41, 77, 107) 100%);
+}
+.Material-FLO {
+    color: rgb(168, 204, 234);
+    background: rgb(41, 77, 107);
+    background: linear-gradient(325deg, rgb(41, 77, 107) 0%, rgb(66, 102, 132) 50%, rgb(41, 77, 107) 100%);
+}
+.Material-FLP {
+    color: rgb(168, 204, 234);
+    background: rgb(41, 77, 107);
+    background: linear-gradient(325deg, rgb(41, 77, 107) 0%, rgb(66, 102, 132) 50%, rgb(41, 77, 107) 100%);
+}
+.Material-GC {
+    color: rgb(168, 204, 234);
+    background: rgb(41, 77, 107);
+    background: linear-gradient(325deg, rgb(41, 77, 107) 0%, rgb(66, 102, 132) 50%, rgb(41, 77, 107) 100%);
+}
+.Material-GV {
+    color: rgb(168, 204, 234);
+    background: rgb(41, 77, 107);
+    background: linear-gradient(325deg, rgb(41, 77, 107) 0%, rgb(66, 102, 132) 50%, rgb(41, 77, 107) 100%);
+}
+.Material-LIT {
+    color: rgb(168, 204, 234);
+    background: rgb(41, 77, 107);
+    background: linear-gradient(325deg, rgb(41, 77, 107) 0%, rgb(66, 102, 132) 50%, rgb(41, 77, 107) 100%);
+}
+.Material-MGC {
+    color: rgb(168, 204, 234);
+    background: rgb(41, 77, 107);
+    background: linear-gradient(325deg, rgb(41, 77, 107) 0%, rgb(66, 102, 132) 50%, rgb(41, 77, 107) 100%);
+}
+.Material-TS {
+    color: rgb(255, 240, 200);
+    background: rgb(153, 113, 73);
+    background: linear-gradient(325deg, rgb(153, 113, 73) 0%, rgb(178, 138, 98) 50%, rgb(153, 113, 73) 100%);
+}
+.Material-ZIR {
+    color: rgb(255, 240, 200);
+    background: rgb(153, 113, 73);
+    background: linear-gradient(325deg, rgb(153, 113, 73) 0%, rgb(178, 138, 98) 50%, rgb(153, 113, 73) 100%);
+}
+.Material-GAL {
+    color: rgb(255, 240, 200);
+    background: rgb(153, 113, 73);
+    background: linear-gradient(325deg, rgb(153, 113, 73) 0%, rgb(178, 138, 98) 50%, rgb(153, 113, 73) 100%);
+}
+.Material-HAL {
+    color: rgb(255, 240, 200);
+    background: rgb(153, 113, 73);
+    background: linear-gradient(325deg, rgb(153, 113, 73) 0%, rgb(178, 138, 98) 50%, rgb(153, 113, 73) 100%);
+}
+.Material-LST {
+    color: rgb(255, 240, 200);
+    background: rgb(153, 113, 73);
+    background: linear-gradient(325deg, rgb(153, 113, 73) 0%, rgb(178, 138, 98) 50%, rgb(153, 113, 73) 100%);
+}
+.Material-MAG {
+    color: rgb(255, 240, 200);
+    background: rgb(153, 113, 73);
+    background: linear-gradient(325deg, rgb(153, 113, 73) 0%, rgb(178, 138, 98) 50%, rgb(153, 113, 73) 100%);
+}
+.Material-MGS {
+    color: rgb(255, 240, 200);
+    background: rgb(153, 113, 73);
+    background: linear-gradient(325deg, rgb(153, 113, 73) 0%, rgb(178, 138, 98) 50%, rgb(153, 113, 73) 100%);
+}
+.Material-SCR {
+    color: rgb(255, 240, 200);
+    background: rgb(153, 113, 73);
+    background: linear-gradient(325deg, rgb(153, 113, 73) 0%, rgb(178, 138, 98) 50%, rgb(153, 113, 73) 100%);
+}
+.Material-TAI {
+    color: rgb(255, 240, 200);
+    background: rgb(153, 113, 73);
+    background: linear-gradient(325deg, rgb(153, 113, 73) 0%, rgb(178, 138, 98) 50%, rgb(153, 113, 73) 100%);
+}
+.Material-STR {
+    color: rgb(212, 255, 212);
+    background: rgb(85, 170, 85);
+    background: linear-gradient(325deg, rgb(85, 170, 85) 0%, rgb(110, 195, 110) 50%, rgb(85, 170, 85) 100%);
+}
+.Material-TUB {
+    color: rgb(212, 255, 212);
+    background: rgb(85, 170, 85);
+    background: linear-gradient(325deg, rgb(85, 170, 85) 0%, rgb(110, 195, 110) 50%, rgb(85, 170, 85) 100%);
+}
+.Material-DIS {
+    color: rgb(218, 173, 255);
+    background: rgb(91, 46, 183);
+    background: linear-gradient(325deg, rgb(91, 46, 183) 0%, rgb(116, 71, 208) 50%, rgb(91, 46, 183) 100%);
+}
+.Material-SEN {
+    color: rgb(218, 173, 255);
+    background: rgb(91, 46, 183);
+    background: linear-gradient(325deg, rgb(91, 46, 183) 0%, rgb(116, 71, 208) 50%, rgb(91, 46, 183) 100%);
+}
+.Material-TPU {
+    color: rgb(218, 173, 255);
+    background: rgb(91, 46, 183);
+    background: linear-gradient(325deg, rgb(91, 46, 183) 0%, rgb(116, 71, 208) 50%, rgb(91, 46, 183) 100%);
+}
+.Material-TRA {
+    color: rgb(218, 173, 255);
+    background: rgb(91, 46, 183);
+    background: linear-gradient(325deg, rgb(91, 46, 183) 0%, rgb(116, 71, 208) 50%, rgb(91, 46, 183) 100%);
+}
+.Material-CBL {
+    color: rgb(148, 189, 166);
+    background: rgb(21, 62, 39);
+    background: linear-gradient(325deg, rgb(21, 62, 39) 0%, rgb(46, 87, 64) 50%, rgb(21, 62, 39) 100%);
+}
+.Material-CBM {
+    color: rgb(148, 189, 166);
+    background: rgb(21, 62, 39);
+    background: linear-gradient(325deg, rgb(21, 62, 39) 0%, rgb(46, 87, 64) 50%, rgb(21, 62, 39) 100%);
+}
+.Material-CBS {
+    color: rgb(148, 189, 166);
+    background: rgb(21, 62, 39);
+    background: linear-gradient(325deg, rgb(21, 62, 39) 0%, rgb(46, 87, 64) 50%, rgb(21, 62, 39) 100%);
+}
+.Material-POW {
+    color: rgb(148, 189, 166);
+    background: rgb(21, 62, 39);
+    background: linear-gradient(325deg, rgb(21, 62, 39) 0%, rgb(46, 87, 64) 50%, rgb(21, 62, 39) 100%);
+}
+.Material-BER {
+    color: rgb(255, 240, 200);
+    background: rgb(153, 113, 73);
+    background: linear-gradient(325deg, rgb(153, 113, 73) 0%, rgb(178, 138, 98) 50%, rgb(153, 113, 73) 100%);
+}
+.Material-BOR {
+    color: rgb(255, 240, 200);
+    background: rgb(153, 113, 73);
+    background: linear-gradient(325deg, rgb(153, 113, 73) 0%, rgb(178, 138, 98) 50%, rgb(153, 113, 73) 100%);
+}
+.Material-BRM {
+    color: rgb(255, 240, 200);
+    background: rgb(153, 113, 73);
+    background: linear-gradient(325deg, rgb(153, 113, 73) 0%, rgb(178, 138, 98) 50%, rgb(153, 113, 73) 100%);
+}
+.Material-CLI {
+    color: rgb(255, 240, 200);
+    background: rgb(153, 113, 73);
+    background: linear-gradient(325deg, rgb(153, 113, 73) 0%, rgb(178, 138, 98) 50%, rgb(153, 113, 73) 100%);
+}
+.Material-PSH {
+    color: rgb(168, 204, 234);
+    background: rgb(41, 77, 107);
+    background: linear-gradient(325deg, rgb(41, 77, 107) 0%, rgb(66, 102, 132) 50%, rgb(41, 77, 107) 100%);
+}
+.Material-TCS {
+    color: rgb(168, 204, 234);
+    background: rgb(41, 77, 107);
+    background: linear-gradient(325deg, rgb(41, 77, 107) 0%, rgb(66, 102, 132) 50%, rgb(41, 77, 107) 100%);
+}
+.Material-TRU {
+    color: rgb(168, 204, 234);
+    background: rgb(41, 77, 107);
+    background: linear-gradient(325deg, rgb(41, 77, 107) 0%, rgb(66, 102, 132) 50%, rgb(41, 77, 107) 100%);
+}
+.Material-TSH {
+    color: rgb(168, 204, 234);
+    background: rgb(41, 77, 107);
+    background: linear-gradient(325deg, rgb(41, 77, 107) 0%, rgb(66, 102, 132) 50%, rgb(41, 77, 107) 100%);
+}
+.Material-AST {
+    color: rgb(250, 203, 157);
+    background: rgb(123, 76, 30);
+    background: linear-gradient(325deg, rgb(123, 76, 30) 0%, rgb(148, 101, 55) 50%, rgb(123, 76, 30) 100%);
+}
+.Material-BGO {
+    color: rgb(250, 203, 157);
+    background: rgb(123, 76, 30);
+    background: linear-gradient(325deg, rgb(123, 76, 30) 0%, rgb(148, 101, 55) 50%, rgb(123, 76, 30) 100%);
+}
+.Material-BOS {
+    color: rgb(250, 203, 157);
+    background: rgb(123, 76, 30);
+    background: linear-gradient(325deg, rgb(123, 76, 30) 0%, rgb(148, 101, 55) 50%, rgb(123, 76, 30) 100%);
+}
+.Material-BRO {
+    color: rgb(250, 203, 157);
+    background: rgb(123, 76, 30);
+    background: linear-gradient(325deg, rgb(123, 76, 30) 0%, rgb(148, 101, 55) 50%, rgb(123, 76, 30) 100%);
+}
+.Material-FAL {
+    color: rgb(250, 203, 157);
+    background: rgb(123, 76, 30);
+    background: linear-gradient(325deg, rgb(123, 76, 30) 0%, rgb(148, 101, 55) 50%, rgb(123, 76, 30) 100%);
+}
+.Material-FET {
+    color: rgb(250, 203, 157);
+    background: rgb(123, 76, 30);
+    background: linear-gradient(325deg, rgb(123, 76, 30) 0%, rgb(148, 101, 55) 50%, rgb(123, 76, 30) 100%);
+}
+.Material-RGO {
+    color: rgb(250, 203, 157);
+    background: rgb(123, 76, 30);
+    background: linear-gradient(325deg, rgb(123, 76, 30) 0%, rgb(148, 101, 55) 50%, rgb(123, 76, 30) 100%);
+}
+.Material-WAL {
+    color: rgb(250, 203, 157);
+    background: rgb(123, 76, 30);
+    background: linear-gradient(325deg, rgb(123, 76, 30) 0%, rgb(148, 101, 55) 50%, rgb(123, 76, 30) 100%);
+}
+.Material-BND {
+    color: rgb(212, 255, 212);
+    background: rgb(85, 170, 85);
+    background: linear-gradient(325deg, rgb(85, 170, 85) 0%, rgb(110, 195, 110) 50%, rgb(85, 170, 85) 100%);
+}
+.Material-PK {
+    color: rgb(212, 255, 212);
+    background: rgb(85, 170, 85);
+    background: linear-gradient(325deg, rgb(85, 170, 85) 0%, rgb(110, 195, 110) 50%, rgb(85, 170, 85) 100%);
+}
+.Material-SEQ {
+    color: rgb(212, 255, 212);
+    background: rgb(85, 170, 85);
+    background: linear-gradient(325deg, rgb(85, 170, 85) 0%, rgb(110, 195, 110) 50%, rgb(85, 170, 85) 100%);
+}
+.Material-ADR {
+    color: rgb(212, 255, 212);
+    background: rgb(85, 170, 85);
+    background: linear-gradient(325deg, rgb(85, 170, 85) 0%, rgb(110, 195, 110) 50%, rgb(85, 170, 85) 100%);
+}
+.Material-CD {
+    color: rgb(218, 173, 255);
+    background: rgb(91, 46, 183);
+    background: linear-gradient(325deg, rgb(91, 46, 183) 0%, rgb(116, 71, 208) 50%, rgb(91, 46, 183) 100%);
+}
+.Material-SOL {
+    color: rgb(148, 189, 166);
+    background: rgb(21, 62, 39);
+    background: linear-gradient(325deg, rgb(21, 62, 39) 0%, rgb(46, 87, 64) 50%, rgb(21, 62, 39) 100%);
+}
+.Material-SP {
+    color: rgb(148, 189, 166);
+    background: rgb(21, 62, 39);
+    background: linear-gradient(325deg, rgb(21, 62, 39) 0%, rgb(46, 87, 64) 50%, rgb(21, 62, 39) 100%);
+}
+.Material-FAN {
+    color: rgb(218, 173, 255);
+    background: rgb(91, 46, 183);
+    background: linear-gradient(325deg, rgb(91, 46, 183) 0%, rgb(116, 71, 208) 50%, rgb(91, 46, 183) 100%);
+}
+.Material-MB {
+    color: rgb(218, 173, 255);
+    background: rgb(91, 46, 183);
+    background: linear-gradient(325deg, rgb(91, 46, 183) 0%, rgb(116, 71, 208) 50%, rgb(91, 46, 183) 100%);
+}
+.Material-MPC {
+    color: rgb(218, 173, 255);
+    background: rgb(91, 46, 183);
+    background: linear-gradient(325deg, rgb(91, 46, 183) 0%, rgb(116, 71, 208) 50%, rgb(91, 46, 183) 100%);
+}
+.Material-PCB {
+    color: rgb(218, 173, 255);
+    background: rgb(91, 46, 183);
+    background: linear-gradient(325deg, rgb(91, 46, 183) 0%, rgb(116, 71, 208) 50%, rgb(91, 46, 183) 100%);
+}
+.Material-RAM {
+    color: rgb(218, 173, 255);
+    background: rgb(91, 46, 183);
+    background: linear-gradient(325deg, rgb(91, 46, 183) 0%, rgb(116, 71, 208) 50%, rgb(91, 46, 183) 100%);
+}
+.Material-ROM {
+    color: rgb(218, 173, 255);
+    background: rgb(91, 46, 183);
+    background: linear-gradient(325deg, rgb(91, 46, 183) 0%, rgb(116, 71, 208) 50%, rgb(91, 46, 183) 100%);
+}
+.Material-EPO {
+    color: rgb(151, 218, 255);
+    background: rgb(24, 91, 211);
+    background: linear-gradient(325deg, rgb(24, 91, 211) 0%, rgb(49, 116, 236) 50%, rgb(24, 91, 211) 100%);
+}
+.Material-GL {
+    color: rgb(151, 218, 255);
+    background: rgb(24, 91, 211);
+    background: linear-gradient(325deg, rgb(24, 91, 211) 0%, rgb(49, 116, 236) 50%, rgb(24, 91, 211) 100%);
+}
+.Material-INS {
+    color: rgb(151, 218, 255);
+    background: rgb(24, 91, 211);
+    background: linear-gradient(325deg, rgb(24, 91, 211) 0%, rgb(49, 116, 236) 50%, rgb(24, 91, 211) 100%);
+}
+.Material-MCG {
+    color: rgb(151, 218, 255);
+    background: rgb(24, 91, 211);
+    background: linear-gradient(325deg, rgb(24, 91, 211) 0%, rgb(49, 116, 236) 50%, rgb(24, 91, 211) 100%);
+}
+.Material-MTC {
+    color: rgb(151, 218, 255);
+    background: rgb(24, 91, 211);
+    background: linear-gradient(325deg, rgb(24, 91, 211) 0%, rgb(49, 116, 236) 50%, rgb(24, 91, 211) 100%);
+}
+.Material-NCS {
+    color: rgb(151, 218, 255);
+    background: rgb(24, 91, 211);
+    background: linear-gradient(325deg, rgb(24, 91, 211) 0%, rgb(49, 116, 236) 50%, rgb(24, 91, 211) 100%);
+}
+.Material-NFI {
+    color: rgb(151, 218, 255);
+    background: rgb(24, 91, 211);
+    background: linear-gradient(325deg, rgb(24, 91, 211) 0%, rgb(49, 116, 236) 50%, rgb(24, 91, 211) 100%);
+}
+.Material-NG {
+    color: rgb(151, 218, 255);
+    background: rgb(24, 91, 211);
+    background: linear-gradient(325deg, rgb(24, 91, 211) 0%, rgb(49, 116, 236) 50%, rgb(24, 91, 211) 100%);
+}
+.Material-RG {
+    color: rgb(151, 218, 255);
+    background: rgb(24, 91, 211);
+    background: linear-gradient(325deg, rgb(24, 91, 211) 0%, rgb(49, 116, 236) 50%, rgb(24, 91, 211) 100%);
+}
+.Material-SEA {
+    color: rgb(151, 218, 255);
+    background: rgb(24, 91, 211);
+    background: linear-gradient(325deg, rgb(24, 91, 211) 0%, rgb(49, 116, 236) 50%, rgb(24, 91, 211) 100%);
+}
+.Material-DW {
+    color: #ff989e;
+    background: #a62c2a;
+    background: linear-gradient(325deg, #a62c2a 0%, #ba363c 50%, #a62c2a 100%);
+}
+.Material-EXO {
+    color: #ff989e;
+    background: #a62c2a;
+    background: linear-gradient(325deg, #a62c2a 0%, #ba363c 50%, #a62c2a 100%);
+}
+.Material-FIM {
+    color: #ff989e;
+    background: #a62c2a;
+    background: linear-gradient(325deg, #a62c2a 0%, #ba363c 50%, #a62c2a 100%);
+}
+.Material-HMS {
+    color: #ff989e;
+    background: #a62c2a;
+    background: linear-gradient(325deg, #a62c2a 0%, #ba363c 50%, #a62c2a 100%);
+}
+.Material-HSS {
+    color: #ff989e;
+    background: #a62c2a;
+    background: linear-gradient(325deg, #a62c2a 0%, #ba363c 50%, #a62c2a 100%);
+}
+.Material-LC {
+    color: #ff989e;
+    background: #a62c2a;
+    background: linear-gradient(325deg, #a62c2a 0%, #ba363c 50%, #a62c2a 100%);
+}
+.Material-MEA {
+    color: #ff989e;
+    background: #a62c2a;
+    background: linear-gradient(325deg, #a62c2a 0%, #ba363c 50%, #a62c2a 100%);
+}
+.Material-OVE {
+    color: #ff989e;
+    background: #a62c2a;
+    background: linear-gradient(325deg, #a62c2a 0%, #ba363c 50%, #a62c2a 100%);
+}
+.Material-PDA {
+    color: #ff989e;
+    background: #a62c2a;
+    background: linear-gradient(325deg, #a62c2a 0%, #ba363c 50%, #a62c2a 100%);
+}
+.Material-PT {
+    color: #ff989e;
+    background: #a62c2a;
+    background: linear-gradient(325deg, #a62c2a 0%, #ba363c 50%, #a62c2a 100%);
+}
+.Material-RAT {
+    color: #ff989e;
+    background: #a62c2a;
+    background: linear-gradient(325deg, #a62c2a 0%, #ba363c 50%, #a62c2a 100%);
+}
+.Material-SCN {
+    color: #ff989e;
+    background: #a62c2a;
+    background: linear-gradient(325deg, #a62c2a 0%, #ba363c 50%, #a62c2a 100%);
+}
+.Material-WS {
+    color: #ff989e;
+    background: #a62c2a;
+    background: linear-gradient(325deg, #a62c2a 0%, #ba363c 50%, #a62c2a 100%);
+}
+.Material-IDC {
+    color: rgb(187, 180, 132);
+    background: rgb(60, 53, 5);
+    background: linear-gradient(325deg, rgb(60, 53, 5) 0%, rgb(85, 78, 30) 50%, rgb(60, 53, 5) 100%);
+}
+.Material-IMM {
+    color: rgb(187, 180, 132);
+    background: rgb(60, 53, 5);
+    background: linear-gradient(325deg, rgb(60, 53, 5) 0%, rgb(85, 78, 30) 50%, rgb(60, 53, 5) 100%);
+}
+.Material-SNM {
+    color: rgb(187, 180, 132);
+    background: rgb(60, 53, 5);
+    background: linear-gradient(325deg, rgb(60, 53, 5) 0%, rgb(85, 78, 30) 50%, rgb(60, 53, 5) 100%);
+}
+.Material-WAI {
+    color: rgb(187, 180, 132);
+    background: rgb(60, 53, 5);
+    background: linear-gradient(325deg, rgb(60, 53, 5) 0%, rgb(85, 78, 30) 50%, rgb(60, 53, 5) 100%);
+}
+.Material-BCO {
+    color: rgb(246, 209, 255);
+    background: rgb(119, 82, 189);
+    background: linear-gradient(325deg, rgb(119, 82, 189) 0%, rgb(144, 107, 214) 50%, rgb(119, 82, 189) 100%);
+}
+.Material-BGC {
+    color: rgb(246, 209, 255);
+    background: rgb(119, 82, 189);
+    background: linear-gradient(325deg, rgb(119, 82, 189) 0%, rgb(144, 107, 214) 50%, rgb(119, 82, 189) 100%);
+}
+.Material-CAP {
+    color: rgb(246, 209, 255);
+    background: rgb(119, 82, 189);
+    background: linear-gradient(325deg, rgb(119, 82, 189) 0%, rgb(144, 107, 214) 50%, rgb(119, 82, 189) 100%);
+}
+.Material-HCC {
+    color: rgb(246, 209, 255);
+    background: rgb(119, 82, 189);
+    background: linear-gradient(325deg, rgb(119, 82, 189) 0%, rgb(144, 107, 214) 50%, rgb(119, 82, 189) 100%);
+}
+.Material-LDI {
+    color: rgb(246, 209, 255);
+    background: rgb(119, 82, 189);
+    background: linear-gradient(325deg, rgb(119, 82, 189) 0%, rgb(144, 107, 214) 50%, rgb(119, 82, 189) 100%);
+}
+.Material-MFK {
+    color: rgb(246, 209, 255);
+    background: rgb(119, 82, 189);
+    background: linear-gradient(325deg, rgb(119, 82, 189) 0%, rgb(144, 107, 214) 50%, rgb(119, 82, 189) 100%);
+}
+.Material-MWF {
+    color: rgb(246, 209, 255);
+    background: rgb(119, 82, 189);
+    background: linear-gradient(325deg, rgb(119, 82, 189) 0%, rgb(144, 107, 214) 50%, rgb(119, 82, 189) 100%);
+}
+.Material-SFK {
+    color: rgb(246, 209, 255);
+    background: rgb(119, 82, 189);
+    background: linear-gradient(325deg, rgb(119, 82, 189) 0%, rgb(144, 107, 214) 50%, rgb(119, 82, 189) 100%);
+}
+.Material-SWF {
+    color: rgb(246, 209, 255);
+    background: rgb(119, 82, 189);
+    background: linear-gradient(325deg, rgb(119, 82, 189) 0%, rgb(144, 107, 214) 50%, rgb(119, 82, 189) 100%);
+}
+.Material-TRN {
+    color: rgb(246, 209, 255);
+    background: rgb(119, 82, 189);
+    background: linear-gradient(325deg, rgb(119, 82, 189) 0%, rgb(144, 107, 214) 50%, rgb(119, 82, 189) 100%);
+}
+.Material-BAI {
+    color: rgb(255, 248, 174);
+    background: rgb(136, 121, 47);
+    background: linear-gradient(325deg, rgb(136, 121, 47) 0%, rgb(161, 146, 72) 50%, rgb(136, 121, 47) 100%);
+}
+.Material-LD {
+    color: rgb(255, 248, 174);
+    background: rgb(136, 121, 47);
+    background: linear-gradient(325deg, rgb(136, 121, 47) 0%, rgb(161, 146, 72) 50%, rgb(136, 121, 47) 100%);
+}
+.Material-MLI {
+    color: rgb(255, 248, 174);
+    background: rgb(136, 121, 47);
+    background: linear-gradient(325deg, rgb(136, 121, 47) 0%, rgb(161, 146, 72) 50%, rgb(136, 121, 47) 100%);
+}
+.Material-NF {
+    color: rgb(255, 248, 174);
+    background: rgb(136, 121, 47);
+    background: linear-gradient(325deg, rgb(136, 121, 47) 0%, rgb(161, 146, 72) 50%, rgb(136, 121, 47) 100%);
+}
+.Material-SA {
+    color: rgb(255, 248, 174);
+    background: rgb(136, 121, 47);
+    background: linear-gradient(325deg, rgb(136, 121, 47) 0%, rgb(161, 146, 72) 50%, rgb(136, 121, 47) 100%);
+}
+.Material-SAL {
+    color: rgb(255, 248, 174);
+    background: rgb(136, 121, 47);
+    background: linear-gradient(325deg, rgb(136, 121, 47) 0%, rgb(161, 146, 72) 50%, rgb(136, 121, 47) 100%);
+}
+.Material-WM {
+    color: rgb(255, 248, 174);
+    background: rgb(136, 121, 47);
+    background: linear-gradient(325deg, rgb(136, 121, 47) 0%, rgb(161, 146, 72) 50%, rgb(136, 121, 47) 100%);
+}
+.Material-ALO {
+    color: rgb(209, 214, 224);
+    background: rgb(82, 87, 97);
+    background: linear-gradient(325deg, rgb(82, 87, 97) 0%, rgb(107, 112, 122) 50%, rgb(82, 87, 97) 100%);
+}
+.Material-AUO {
+    color: rgb(209, 214, 224);
+    background: rgb(82, 87, 97);
+    background: linear-gradient(325deg, rgb(82, 87, 97) 0%, rgb(107, 112, 122) 50%, rgb(82, 87, 97) 100%);
+}
+.Material-HAB {
+    color: rgb(156, 154, 155);
+    background: rgb(29, 27, 28);
+    background: linear-gradient(325deg, rgb(29, 27, 28) 0%, rgb(54, 52, 53) 50%, rgb(29, 27, 28) 100%);
+}
+.Material-LU {
+    color: rgb(156, 154, 155);
+    background: rgb(29, 27, 28);
+    background: linear-gradient(325deg, rgb(29, 27, 28) 0%, rgb(54, 52, 53) 50%, rgb(29, 27, 28) 100%);
+}
+.Material-RDL {
+    color: rgb(156, 154, 155);
+    background: rgb(29, 27, 28);
+    background: linear-gradient(325deg, rgb(29, 27, 28) 0%, rgb(54, 52, 53) 50%, rgb(29, 27, 28) 100%);
+}
+.Material-RDS {
+    color: rgb(156, 154, 155);
+    background: rgb(29, 27, 28);
+    background: linear-gradient(325deg, rgb(29, 27, 28) 0%, rgb(54, 52, 53) 50%, rgb(29, 27, 28) 100%);
+}
+.Material-SU {
+    color: rgb(156, 154, 155);
+    background: rgb(29, 27, 28);
+    background: linear-gradient(325deg, rgb(29, 27, 28) 0%, rgb(54, 52, 53) 50%, rgb(29, 27, 28) 100%);
+}
+.Material-TCU {
+    color: rgb(156, 154, 155);
+    background: rgb(29, 27, 28);
+    background: linear-gradient(325deg, rgb(29, 27, 28) 0%, rgb(54, 52, 53) 50%, rgb(29, 27, 28) 100%);
+}
+.Material-WOR {
+    color: rgb(156, 154, 155);
+    background: rgb(29, 27, 28);
+    background: linear-gradient(325deg, rgb(29, 27, 28) 0%, rgb(54, 52, 53) 50%, rgb(29, 27, 28) 100%);
+}
+.Material-APT {
+    color: rgb(230 230,127);
+    background: rgb(224, 131, 0);
+    background: linear-gradient(325deg, rgb(224, 131, 0) 0%, rgb(249, 156, 25) 50%, rgb(224, 131, 0) 100%);
+}
+.Material-ARP {
+    color: rgb(230 230,127);
+    background: rgb(224, 131, 0);
+    background: linear-gradient(325deg, rgb(224, 131, 0) 0%, rgb(249, 156, 25) 50%, rgb(224, 131, 0) 100%);
+}
+.Material-AWH {
+    color: rgb(230 230,127);
+    background: rgb(224, 131, 0);
+    background: linear-gradient(325deg, rgb(224, 131, 0) 0%, rgb(249, 156, 25) 50%, rgb(224, 131, 0) 100%);
+}
+.Material-BPT {
+    color: rgb(230 230,127);
+    background: rgb(224, 131, 0);
+    background: linear-gradient(325deg, rgb(224, 131, 0) 0%, rgb(249, 156, 25) 50%, rgb(224, 131, 0) 100%);
+}
+.Material-BWH {
+    color: rgb(230 230,127);
+    background: rgb(224, 131, 0);
+    background: linear-gradient(325deg, rgb(224, 131, 0) 0%, rgb(249, 156, 25) 50%, rgb(224, 131, 0) 100%);
+}
+.Material-SRP {
+    color: rgb(230 230,127);
+    background: rgb(224, 131, 0);
+    background: linear-gradient(325deg, rgb(224, 131, 0) 0%, rgb(249, 156, 25) 50%, rgb(224, 131, 0) 100%);
+}
+.Material-AWF {
+    color: rgb(213, 147, 255);
+    background: rgb(86, 20, 147);
+    background: linear-gradient(325deg, rgb(86, 20, 147) 0%, rgb(111, 45, 172) 50%, rgb(86, 20, 147) 100%);
+}
+.Material-BID {
+    color: rgb(213, 147, 255);
+    background: rgb(86, 20, 147);
+    background: linear-gradient(325deg, rgb(86, 20, 147) 0%, rgb(111, 45, 172) 50%, rgb(86, 20, 147) 100%);
+}
+.Material-BMF {
+    color: rgb(213, 147, 255);
+    background: rgb(86, 20, 147);
+    background: linear-gradient(325deg, rgb(86, 20, 147) 0%, rgb(111, 45, 172) 50%, rgb(86, 20, 147) 100%);
+}
+.Material-BSC {
+    color: rgb(213, 147, 255);
+    background: rgb(86, 20, 147);
+    background: linear-gradient(325deg, rgb(86, 20, 147) 0%, rgb(111, 45, 172) 50%, rgb(86, 20, 147) 100%);
+}
+.Material-BWS {
+    color: rgb(213, 147, 255);
+    background: rgb(86, 20, 147);
+    background: linear-gradient(325deg, rgb(86, 20, 147) 0%, rgb(111, 45, 172) 50%, rgb(86, 20, 147) 100%);
+}
+.Material-HD {
+    color: rgb(213, 147, 255);
+    background: rgb(86, 20, 147);
+    background: linear-gradient(325deg, rgb(86, 20, 147) 0%, rgb(111, 45, 172) 50%, rgb(86, 20, 147) 100%);
+}
+.Material-HOG {
+    color: rgb(213, 147, 255);
+    background: rgb(86, 20, 147);
+    background: linear-gradient(325deg, rgb(86, 20, 147) 0%, rgb(111, 45, 172) 50%, rgb(86, 20, 147) 100%);
+}
+.Material-HPC {
+    color: rgb(213, 147, 255);
+    background: rgb(86, 20, 147);
+    background: linear-gradient(325deg, rgb(86, 20, 147) 0%, rgb(111, 45, 172) 50%, rgb(86, 20, 147) 100%);
+}
+.Material-MHP {
+    color: rgb(213, 147, 255);
+    background: rgb(86, 20, 147);
+    background: linear-gradient(325deg, rgb(86, 20, 147) 0%, rgb(111, 45, 172) 50%, rgb(86, 20, 147) 100%);
+}
+.Material-RAD {
+    color: rgb(213, 147, 255);
+    background: rgb(86, 20, 147);
+    background: linear-gradient(325deg, rgb(86, 20, 147) 0%, rgb(111, 45, 172) 50%, rgb(86, 20, 147) 100%);
+}
+.Material-SAR {
+    color: rgb(213, 147, 255);
+    background: rgb(86, 20, 147);
+    background: linear-gradient(325deg, rgb(86, 20, 147) 0%, rgb(111, 45, 172) 50%, rgb(86, 20, 147) 100%);
+}
+.Material-AL {
+    color: rgb(181, 181, 181);
+    background: rgb(54, 54, 54);
+    background: linear-gradient(325deg, rgb(54, 54, 54) 0%, rgb(79, 79, 79) 50%, rgb(54, 54, 54) 100%);
+}
+.Material-CU {
+    color: rgb(181, 181, 181);
+    background: rgb(54, 54, 54);
+    background: linear-gradient(325deg, rgb(54, 54, 54) 0%, rgb(79, 79, 79) 50%, rgb(54, 54, 54) 100%);
+}
+.Material-FE {
+    color: rgb(181, 181, 181);
+    background: rgb(54, 54, 54);
+    background: linear-gradient(325deg, rgb(54, 54, 54) 0%, rgb(79, 79, 79) 50%, rgb(54, 54, 54) 100%);
+}
+.Material-LI {
+    color: rgb(181, 181, 181);
+    background: rgb(54, 54, 54);
+    background: linear-gradient(325deg, rgb(54, 54, 54) 0%, rgb(79, 79, 79) 50%, rgb(54, 54, 54) 100%);
+}
+.Material-SI {
+    color: rgb(181, 181, 181);
+    background: rgb(54, 54, 54);
+    background: linear-gradient(325deg, rgb(54, 54, 54) 0%, rgb(79, 79, 79) 50%, rgb(54, 54, 54) 100%);
+}
+.Material-STL {
+    color: rgb(181, 181, 181);
+    background: rgb(54, 54, 54);
+    background: linear-gradient(325deg, rgb(54, 54, 54) 0%, rgb(79, 79, 79) 50%, rgb(54, 54, 54) 100%);
+}
+.Material-TI {
+    color: rgb(181, 181, 181);
+    background: rgb(54, 54, 54);
+    background: linear-gradient(325deg, rgb(54, 54, 54) 0%, rgb(79, 79, 79) 50%, rgb(54, 54, 54) 100%);
+}
+.Material-W {
+    color: rgb(181, 181, 181);
+    background: rgb(54, 54, 54);
+    background: linear-gradient(325deg, rgb(54, 54, 54) 0%, rgb(79, 79, 79) 50%, rgb(54, 54, 54) 100%);
+}
+.Material-ACS {
+    color: rgb(178, 153, 203);
+    background: rgb(51, 26, 76);
+    background: linear-gradient(325deg, rgb(51, 26, 76) 0%, rgb(76, 51, 101) 50%, rgb(51, 26, 76) 100%);
+}
+.Material-ADS {
+    color: rgb(178, 153, 203);
+    background: rgb(51, 26, 76);
+    background: linear-gradient(325deg, rgb(51, 26, 76) 0%, rgb(76, 51, 101) 50%, rgb(51, 26, 76) 100%);
+}
+.Material-AAR {
+    color: rgb(213, 147, 255);
+    background: rgb(86, 20, 147);
+    background: linear-gradient(325deg, rgb(86, 20, 147) 0%, rgb(111, 45, 172) 50%, rgb(86, 20, 147) 100%);
+}
+.Material-CUO {
+    color: rgb(209, 214, 224);
+    background: rgb(82, 87, 97);
+    background: linear-gradient(325deg, rgb(82, 87, 97) 0%, rgb(107, 112, 122) 50%, rgb(82, 87, 97) 100%);
+}
+.Material-FEO {
+    color: rgb(209, 214, 224);
+    background: rgb(82, 87, 97);
+    background: linear-gradient(325deg, rgb(82, 87, 97) 0%, rgb(107, 112, 122) 50%, rgb(82, 87, 97) 100%);
+}
+.Material-LIO {
+    color: rgb(209, 214, 224);
+    background: rgb(82, 87, 97);
+    background: linear-gradient(325deg, rgb(82, 87, 97) 0%, rgb(107, 112, 122) 50%, rgb(82, 87, 97) 100%);
+}
+.Material-SIO {
+    color: rgb(209, 214, 224);
+    background: rgb(82, 87, 97);
+    background: linear-gradient(325deg, rgb(82, 87, 97) 0%, rgb(107, 112, 122) 50%, rgb(82, 87, 97) 100%);
+}
+.Material-TIO {
+    color: rgb(209, 214, 224);
+    background: rgb(82, 87, 97);
+    background: linear-gradient(325deg, rgb(82, 87, 97) 0%, rgb(107, 112, 122) 50%, rgb(82, 87, 97) 100%);
+}
+.Material-BR1 {
+    color: rgb(156, 154, 155);
+    background: rgb(29, 27, 28);
+    background: linear-gradient(325deg, rgb(29, 27, 28) 0%, rgb(54, 52, 53) 50%, rgb(29, 27, 28) 100%);
+}
+.Material-BR2 {
+    color: rgb(156, 154, 155);
+    background: rgb(29, 27, 28);
+    background: linear-gradient(325deg, rgb(29, 27, 28) 0%, rgb(54, 52, 53) 50%, rgb(29, 27, 28) 100%);
+}
+.Material-BRS {
+    color: rgb(156, 154, 155);
+    background: rgb(29, 27, 28);
+    background: linear-gradient(325deg, rgb(29, 27, 28) 0%, rgb(54, 52, 53) 50%, rgb(29, 27, 28) 100%);
+}
+.Material-CQL {
+    color: rgb(156, 154, 155);
+    background: rgb(29, 27, 28);
+    background: linear-gradient(325deg, rgb(29, 27, 28) 0%, rgb(54, 52, 53) 50%, rgb(29, 27, 28) 100%);
+}
+.Material-CQM {
+    color: rgb(156, 154, 155);
+    background: rgb(29, 27, 28);
+    background: linear-gradient(325deg, rgb(29, 27, 28) 0%, rgb(54, 52, 53) 50%, rgb(29, 27, 28) 100%);
+}
+.Material-CQS {
+    color: rgb(156, 154, 155);
+    background: rgb(29, 27, 28);
+    background: linear-gradient(325deg, rgb(29, 27, 28) 0%, rgb(54, 52, 53) 50%, rgb(29, 27, 28) 100%);
+}
+.Material-CQT {
+    color: rgb(156, 154, 155);
+    background: rgb(29, 27, 28);
+    background: linear-gradient(325deg, rgb(29, 27, 28) 0%, rgb(54, 52, 53) 50%, rgb(29, 27, 28) 100%);
+}
+.Material-DOU {
+    color: rgb(156, 154, 155);
+    background: rgb(29, 27, 28);
+    background: linear-gradient(325deg, rgb(29, 27, 28) 0%, rgb(54, 52, 53) 50%, rgb(29, 27, 28) 100%);
+}
+.Material-CC {
+    color: rgb(178, 153, 203);
+    background: rgb(51, 26, 76);
+    background: linear-gradient(325deg, rgb(51, 26, 76) 0%, rgb(76, 51, 101) 50%, rgb(51, 26, 76) 100%);
+}
+.Material-COM {
+    color: rgb(178, 153, 203);
+    background: rgb(51, 26, 76);
+    background: linear-gradient(325deg, rgb(51, 26, 76) 0%, rgb(76, 51, 101) 50%, rgb(51, 26, 76) 100%);
+}
+.Material-CRU {
+    color: rgb(178, 153, 203);
+    background: rgb(51, 26, 76);
+    background: linear-gradient(325deg, rgb(51, 26, 76) 0%, rgb(76, 51, 101) 50%, rgb(51, 26, 76) 100%);
+}
+.Material-FFC {
+    color: rgb(178, 153, 203);
+    background: rgb(51, 26, 76);
+    background: linear-gradient(325deg, rgb(51, 26, 76) 0%, rgb(76, 51, 101) 50%, rgb(51, 26, 76) 100%);
+}
+.Material-LIS {
+    color: rgb(178, 153, 203);
+    background: rgb(51, 26, 76);
+    background: linear-gradient(325deg, rgb(51, 26, 76) 0%, rgb(76, 51, 101) 50%, rgb(51, 26, 76) 100%);
+}
+.Material-LOG {
+    color: rgb(178, 153, 203);
+    background: rgb(51, 26, 76);
+    background: linear-gradient(325deg, rgb(51, 26, 76) 0%, rgb(76, 51, 101) 50%, rgb(51, 26, 76) 100%);
+}
+.Material-STS {
+    color: rgb(178, 153, 203);
+    background: rgb(51, 26, 76);
+    background: linear-gradient(325deg, rgb(51, 26, 76) 0%, rgb(76, 51, 101) 50%, rgb(51, 26, 76) 100%);
+}
+.Material-TAC {
+    color: rgb(178, 153, 203);
+    background: rgb(51, 26, 76);
+    background: linear-gradient(325deg, rgb(51, 26, 76) 0%, rgb(76, 51, 101) 50%, rgb(51, 26, 76) 100%);
+}
+.Material-WR {
+    color: rgb(178, 153, 203);
+    background: rgb(51, 26, 76);
+    background: linear-gradient(325deg, rgb(51, 26, 76) 0%, rgb(76, 51, 101) 50%, rgb(51, 26, 76) 100%);
+}
+.Material-CF {
+    color: rgb(209, 217, 160);
+    background: rgb(82, 90, 33);
+    background: linear-gradient(325deg, rgb(82, 90, 33) 0%, rgb(107, 115, 58) 50%, rgb(82, 90, 33) 100%);
+}
+.Material-COT {
+    color: rgb(209, 217, 160);
+    background: rgb(82, 90, 33);
+    background: linear-gradient(325deg, rgb(82, 90, 33) 0%, rgb(107, 115, 58) 50%, rgb(82, 90, 33) 100%);
+}
+.Material-CTF {
+    color: rgb(209, 217, 160);
+    background: rgb(82, 90, 33);
+    background: linear-gradient(325deg, rgb(82, 90, 33) 0%, rgb(107, 115, 58) 50%, rgb(82, 90, 33) 100%);
+}
+.Material-KV {
+    color: rgb(209, 217, 160);
+    background: rgb(82, 90, 33);
+    background: linear-gradient(325deg, rgb(82, 90, 33) 0%, rgb(107, 115, 58) 50%, rgb(82, 90, 33) 100%);
+}
+.Material-NL {
+    color: rgb(209, 217, 160);
+    background: rgb(82, 90, 33);
+    background: linear-gradient(325deg, rgb(82, 90, 33) 0%, rgb(107, 115, 58) 50%, rgb(82, 90, 33) 100%);
+}
+.Material-SIL {
+    color: rgb(209, 217, 160);
+    background: rgb(82, 90, 33);
+    background: linear-gradient(325deg, rgb(82, 90, 33) 0%, rgb(107, 115, 58) 50%, rgb(82, 90, 33) 100%);
+}
+.Material-TK {
+    color: rgb(209, 217, 160);
+    background: rgb(82, 90, 33);
+    background: linear-gradient(325deg, rgb(82, 90, 33) 0%, rgb(107, 115, 58) 50%, rgb(82, 90, 33) 100%);
+}
+.Material-DCL {
+    color: #f89ee1;
+    background: rgb(121,31,98);
+    background: linear-gradient(325deg, rgb(121,31,98) 0%, #92387b 50%, rgb(121,31,98) 100%);
+}
+.Material-DCS {
+    color: #f89ee1;
+    background: rgb(121,31,98);
+    background: linear-gradient(325deg, rgb(121,31,98) 0%, #92387b 50%, rgb(121,31,98) 100%);
+}
+.Material-PE {
+    color: #f89ee1;
+    background: rgb(121,31,98);
+    background: linear-gradient(325deg, rgb(121,31,98) 0%, #92387b 50%, rgb(121,31,98) 100%);
+}
+.Material-PG {
+    color: #f89ee1;
+    background: rgb(121,31,98);
+    background: linear-gradient(325deg, rgb(121,31,98) 0%, #92387b 50%, rgb(121,31,98) 100%);
+}
+.Material-PSL {
+    color: #f89ee1;
+    background: rgb(121,31,98);
+    background: linear-gradient(325deg, rgb(121,31,98) 0%, #92387b 50%, rgb(121,31,98) 100%);
+}
+.Material-PSM {
+    color: #f89ee1;
+    background: rgb(121,31,98);
+    background: linear-gradient(325deg, rgb(121,31,98) 0%, #92387b 50%, rgb(121,31,98) 100%);
+}
+.Material-PSS {
+    color: #f89ee1;
+    background: rgb(121,31,98);
+    background: linear-gradient(325deg, rgb(121,31,98) 0%, #92387b 50%, rgb(121,31,98) 100%);
+}
+.Material-BAC {
+    color: rgb(255, 173, 218);
+    background: rgb(183, 46, 91);
+    background: linear-gradient(325deg, rgb(183, 46, 91) 0%, rgb(208, 71, 116) 50%, rgb(183, 46, 91) 100%);
+}
+.Material-BL {
+    color: rgb(255, 173, 218);
+    background: rgb(183, 46, 91);
+    background: linear-gradient(325deg, rgb(183, 46, 91) 0%, rgb(208, 71, 116) 50%, rgb(183, 46, 91) 100%);
+}
+.Material-JUI {
+    color: rgb(255, 173, 218);
+    background: rgb(183, 46, 91);
+    background: linear-gradient(325deg, rgb(183, 46, 91) 0%, rgb(208, 71, 116) 50%, rgb(183, 46, 91) 100%);
+}
+.Material-LCR {
+    color: rgb(255, 173, 218);
+    background: rgb(183, 46, 91);
+    background: linear-gradient(325deg, rgb(183, 46, 91) 0%, rgb(208, 71, 116) 50%, rgb(183, 46, 91) 100%);
+}
+.Material-NAB {
+    color: rgb(255, 173, 218);
+    background: rgb(183, 46, 91);
+    background: linear-gradient(325deg, rgb(183, 46, 91) 0%, rgb(208, 71, 116) 50%, rgb(183, 46, 91) 100%);
+}
+.Material-NR {
+    color: rgb(255, 173, 218);
+    background: rgb(183, 46, 91);
+    background: linear-gradient(325deg, rgb(183, 46, 91) 0%, rgb(208, 71, 116) 50%, rgb(183, 46, 91) 100%);
+}
+.Material-NS {
+    color: rgb(255, 173, 218);
+    background: rgb(183, 46, 91);
+    background: linear-gradient(325deg, rgb(183, 46, 91) 0%, rgb(208, 71, 116) 50%, rgb(183, 46, 91) 100%);
+}
+.Material-OLF {
+    color: rgb(255, 173, 218);
+    background: rgb(183, 46, 91);
+    background: linear-gradient(325deg, rgb(183, 46, 91) 0%, rgb(208, 71, 116) 50%, rgb(183, 46, 91) 100%);
+}
+.Material-PFE {
+    color: rgb(255, 173, 218);
+    background: rgb(183, 46, 91);
+    background: linear-gradient(325deg, rgb(183, 46, 91) 0%, rgb(208, 71, 116) 50%, rgb(183, 46, 91) 100%);
+}
+.Material-REA {
+    color: rgb(255, 173, 218);
+    background: rgb(183, 46, 91);
+    background: linear-gradient(325deg, rgb(183, 46, 91) 0%, rgb(208, 71, 116) 50%, rgb(183, 46, 91) 100%);
+}
+.Material-SOI {
+    color: rgb(255, 173, 218);
+    background: rgb(183, 46, 91);
+    background: linear-gradient(325deg, rgb(183, 46, 91) 0%, rgb(208, 71, 116) 50%, rgb(183, 46, 91) 100%);
+}
+.Material-TCL {
+    color: rgb(255, 173, 218);
+    background: rgb(183, 46, 91);
+    background: linear-gradient(325deg, rgb(183, 46, 91) 0%, rgb(208, 71, 116) 50%, rgb(183, 46, 91) 100%);
+}
+.Material-THF {
+    color: rgb(255, 173, 218);
+    background: rgb(183, 46, 91);
+    background: linear-gradient(325deg, rgb(183, 46, 91) 0%, rgb(208, 71, 116) 50%, rgb(183, 46, 91) 100%);
+}
+.Material-BE {
+    color: rgb(188, 173, 159);
+    background: rgb(61, 46, 32);
+    background: linear-gradient(325deg, rgb(61, 46, 32) 0%, rgb(86, 71, 57) 50%, rgb(61, 46, 32) 100%);
+}
+.Material-C {
+    color: rgb(188, 173, 159);
+    background: rgb(61, 46, 32);
+    background: linear-gradient(325deg, rgb(61, 46, 32) 0%, rgb(86, 71, 57) 50%, rgb(61, 46, 32) 100%);
+}
+.Material-CA {
+    color: rgb(188, 173, 159);
+    background: rgb(61, 46, 32);
+    background: linear-gradient(325deg, rgb(61, 46, 32) 0%, rgb(86, 71, 57) 50%, rgb(61, 46, 32) 100%);
+}
+.Material-CL {
+    color: rgb(188, 173, 159);
+    background: rgb(61, 46, 32);
+    background: linear-gradient(325deg, rgb(61, 46, 32) 0%, rgb(86, 71, 57) 50%, rgb(61, 46, 32) 100%);
+}
+.Material-ES {
+    color: rgb(188, 173, 159);
+    background: rgb(61, 46, 32);
+    background: linear-gradient(325deg, rgb(61, 46, 32) 0%, rgb(86, 71, 57) 50%, rgb(61, 46, 32) 100%);
+}
+.Material-BLE {
+    color: rgb(255, 173, 218);
+    background: rgb(183, 46, 91);
+    background: linear-gradient(325deg, rgb(183, 46, 91) 0%, rgb(208, 71, 116) 50%, rgb(183, 46, 91) 100%);
+}
+.Material-CST {
+    color: rgb(255, 173, 218);
+    background: rgb(183, 46, 91);
+    background: linear-gradient(325deg, rgb(183, 46, 91) 0%, rgb(208, 71, 116) 50%, rgb(183, 46, 91) 100%);
+}
+.Material-DDT {
+    color: rgb(255, 173, 218);
+    background: rgb(183, 46, 91);
+    background: linear-gradient(325deg, rgb(183, 46, 91) 0%, rgb(208, 71, 116) 50%, rgb(183, 46, 91) 100%);
+}
+.Material-EES {
+    color: rgb(255, 173, 218);
+    background: rgb(183, 46, 91);
+    background: linear-gradient(325deg, rgb(183, 46, 91) 0%, rgb(208, 71, 116) 50%, rgb(183, 46, 91) 100%);
+}
+.Material-ETC {
+    color: rgb(255, 173, 218);
+    background: rgb(183, 46, 91);
+    background: linear-gradient(325deg, rgb(183, 46, 91) 0%, rgb(208, 71, 116) 50%, rgb(183, 46, 91) 100%);
+}
+.Material-FLX {
+    color: rgb(255, 173, 218);
+    background: rgb(183, 46, 91);
+    background: linear-gradient(325deg, rgb(183, 46, 91) 0%, rgb(208, 71, 116) 50%, rgb(183, 46, 91) 100%);
+}
+.Material-IND {
+    color: rgb(255, 173, 218);
+    background: rgb(183, 46, 91);
+    background: linear-gradient(325deg, rgb(183, 46, 91) 0%, rgb(208, 71, 116) 50%, rgb(183, 46, 91) 100%);
+}
+.Material-I {
+    color: rgb(188, 173, 159);
+    background: rgb(61, 46, 32);
+    background: linear-gradient(325deg, rgb(61, 46, 32) 0%, rgb(86, 71, 57) 50%, rgb(61, 46, 32) 100%);
+}
+.Material-FUN {
+    color: rgb(156, 154, 155);
+    background: rgb(29, 27, 28);
+    background: linear-gradient(325deg, rgb(29, 27, 28) 0%, rgb(54, 52, 53) 50%, rgb(29, 27, 28) 100%);
+}
+.Material-H {
+    color: rgb(127, 232, 234);
+    background: rgb(0, 105, 107);
+    background: linear-gradient(325deg, rgb(0, 105, 107) 0%, rgb(25, 130, 132) 50%, rgb(0, 105, 107) 100%);
+}
+.Material-HE3 {
+    color: rgb(127, 232, 234);
+    background: rgb(0, 105, 107);
+    background: linear-gradient(325deg, rgb(0, 105, 107) 0%, rgb(25, 130, 132) 50%, rgb(0, 105, 107) 100%);
+}
+.Material-N {
+    color: rgb(127, 232, 234);
+    background: rgb(0, 105, 107);
+    background: linear-gradient(325deg, rgb(0, 105, 107) 0%, rgb(25, 130, 132) 50%, rgb(0, 105, 107) 100%);
+}
+.Material-NE {
+    color: rgb(127, 232, 234);
+    background: rgb(0, 105, 107);
+    background: linear-gradient(325deg, rgb(0, 105, 107) 0%, rgb(25, 130, 132) 50%, rgb(0, 105, 107) 100%);
+}
+.Material-O {
+    color: rgb(127, 232, 234);
+    background: rgb(0, 105, 107);
+    background: linear-gradient(325deg, rgb(0, 105, 107) 0%, rgb(25, 130, 132) 50%, rgb(0, 105, 107) 100%);
+}
+.Material-AGS {
+    color: rgb(255, 226, 127);
+    background: rgb(153, 99, 0);
+    background: linear-gradient(325deg, rgb(153, 99, 0) 0%, rgb(178, 124, 25) 50%, rgb(153, 99, 0) 100%);
+}
+.Material-AHP {
+    color: rgb(255, 226, 127);
+    background: rgb(153, 99, 0);
+    background: linear-gradient(325deg, rgb(153, 99, 0) 0%, rgb(178, 124, 25) 50%, rgb(153, 99, 0) 100%);
+}
+.Material-ATP {
+    color: rgb(255, 226, 127);
+    background: rgb(153, 99, 0);
+    background: linear-gradient(325deg, rgb(153, 99, 0) 0%, rgb(178, 124, 25) 50%, rgb(153, 99, 0) 100%);
+}
+.Material-BGS {
+    color: rgb(255, 226, 127);
+    background: rgb(153, 99, 0);
+    background: linear-gradient(325deg, rgb(153, 99, 0) 0%, rgb(178, 124, 25) 50%, rgb(153, 99, 0) 100%);
+}
+.Material-BHP {
+    color: rgb(255, 226, 127);
+    background: rgb(153, 99, 0);
+    background: linear-gradient(325deg, rgb(153, 99, 0) 0%, rgb(178, 124, 25) 50%, rgb(153, 99, 0) 100%);
+}
+.Material-HHP {
+    color: rgb(255, 226, 127);
+    background: rgb(153, 99, 0);
+    background: linear-gradient(325deg, rgb(153, 99, 0) 0%, rgb(178, 124, 25) 50%, rgb(153, 99, 0) 100%);
+}
+.Material-MG {
+    color: rgb(188, 173, 159);
+    background: rgb(61, 46, 32);
+    background: linear-gradient(325deg, rgb(61, 46, 32) 0%, rgb(86, 71, 57) 50%, rgb(61, 46, 32) 100%);
+}
+.Material-S {
+    color: rgb(188, 173, 159);
+    background: rgb(61, 46, 32);
+    background: linear-gradient(325deg, rgb(61, 46, 32) 0%, rgb(86, 71, 57) 50%, rgb(61, 46, 32) 100%);
+}
+.Material-TA {
+    color: rgb(188, 173, 159);
+    background: rgb(61, 46, 32);
+    background: linear-gradient(325deg, rgb(61, 46, 32) 0%, rgb(86, 71, 57) 50%, rgb(61, 46, 32) 100%);
+}
+.Material-TC {
+    color: rgb(188, 173, 159);
+    background: rgb(61, 46, 32);
+    background: linear-gradient(325deg, rgb(61, 46, 32) 0%, rgb(86, 71, 57) 50%, rgb(61, 46, 32) 100%);
+}
+.Material-ZR {
+    color: rgb(188, 173, 159);
+    background: rgb(61, 46, 32);
+    background: linear-gradient(325deg, rgb(61, 46, 32) 0%, rgb(86, 71, 57) 50%, rgb(61, 46, 32) 100%);
+}
+.Material-AMM {
+    color: rgb(127, 232, 234);
+    background: rgb(0, 105, 107);
+    background: linear-gradient(325deg, rgb(0, 105, 107) 0%, rgb(25, 130, 132) 50%, rgb(0, 105, 107) 100%);
+}
+.Material-AR {
+    color: rgb(127, 232, 234);
+    background: rgb(0, 105, 107);
+    background: linear-gradient(325deg, rgb(0, 105, 107) 0%, rgb(25, 130, 132) 50%, rgb(0, 105, 107) 100%);
+}
+.Material-CCD {
+    color: rgb(255, 179, 145);
+    background: rgb(140, 52, 18);
+    background: linear-gradient(325deg, rgb(140, 52, 18) 0%, rgb(165, 77, 43) 50%, rgb(140, 52, 18) 100%);
+}
+.Material-FOD {
+    color: #74ad5e;
+    background: rgb(0,53,0);
+    background: linear-gradient(325deg, rgb(0,53,0) 0%, #0a4708 50%, rgb(0,53,0) 100%);
+}
+.Material-GRA {
+    color: #74ad5e;
+    background: rgb(0,53,0);
+    background: linear-gradient(325deg, rgb(0,53,0) 0%, #0a4708 50%, rgb(0,53,0) 100%);
+}
+.Material-GRN {
+    color: #74ad5e;
+    background: rgb(0,53,0);
+    background: linear-gradient(325deg, rgb(0,53,0) 0%, #0a4708 50%, rgb(0,53,0) 100%);
+}
+.Material-HCP {
+    color: #74ad5e;
+    background: rgb(0,53,0);
+    background: linear-gradient(325deg, rgb(0,53,0) 0%, #0a4708 50%, rgb(0,53,0) 100%);
+}
+.Material-HER {
+    color: #74ad5e;
+    background: rgb(0,53,0);
+    background: linear-gradient(325deg, rgb(0,53,0) 0%, #0a4708 50%, rgb(0,53,0) 100%);
+}
+.Material-HOP {
+    color: #74ad5e;
+    background: rgb(0,53,0);
+    background: linear-gradient(325deg, rgb(0,53,0) 0%, #0a4708 50%, rgb(0,53,0) 100%);
+}
+.Material-MAI {
+    color: #74ad5e;
+    background: rgb(0,53,0);
+    background: linear-gradient(325deg, rgb(0,53,0) 0%, #0a4708 50%, rgb(0,53,0) 100%);
+}
+.Material-DCH {
+    color: rgb(255, 179, 145);
+    background: rgb(140, 52, 18);
+    background: linear-gradient(325deg, rgb(140, 52, 18) 0%, rgb(165, 77, 43) 50%, rgb(140, 52, 18) 100%);
+}
+.Material-DRF {
+    color: rgb(255, 179, 145);
+    background: rgb(140, 52, 18);
+    background: linear-gradient(325deg, rgb(140, 52, 18) 0%, rgb(165, 77, 43) 50%, rgb(140, 52, 18) 100%);
+}
+.Material-RED {
+    color: rgb(255, 179, 145);
+    background: rgb(140, 52, 18);
+    background: linear-gradient(325deg, rgb(140, 52, 18) 0%, rgb(165, 77, 43) 50%, rgb(140, 52, 18) 100%);
+}
+.Material-SDR {
+    color: rgb(255, 179, 145);
+    background: rgb(140, 52, 18);
+    background: linear-gradient(325deg, rgb(140, 52, 18) 0%, rgb(165, 77, 43) 50%, rgb(140, 52, 18) 100%);
+}
+.Material-SRD {
+    color: rgb(255, 179, 145);
+    background: rgb(140, 52, 18);
+    background: linear-gradient(325deg, rgb(140, 52, 18) 0%, rgb(165, 77, 43) 50%, rgb(140, 52, 18) 100%);
+}
+.Material-SUD {
+    color: rgb(255, 179, 145);
+    background: rgb(140, 52, 18);
+    background: linear-gradient(325deg, rgb(140, 52, 18) 0%, rgb(165, 77, 43) 50%, rgb(140, 52, 18) 100%);
+}
+.Material-BEA {
+    color: #74ad5e;
+    background: rgb(0,53,0);
+    background: linear-gradient(325deg, rgb(0,53,0) 0%, #0a4708 50%, rgb(0,53,0) 100%);
+}
+.Material-CAF {
+    color: #74ad5e;
+    background: rgb(0,53,0);
+    background: linear-gradient(325deg, rgb(0,53,0) 0%, #0a4708 50%, rgb(0,53,0) 100%);
+}
+.Material-MTP {
+    color: #74ad5e;
+    background: rgb(0,53,0);
+    background: linear-gradient(325deg, rgb(0,53,0) 0%, #0a4708 50%, rgb(0,53,0) 100%);
+}
+.Material-MUS {
+    color: #74ad5e;
+    background: rgb(0,53,0);
+    background: linear-gradient(325deg, rgb(0,53,0) 0%, #0a4708 50%, rgb(0,53,0) 100%);
+}
+.Material-NUT {
+    color: #74ad5e;
+    background: rgb(0,53,0);
+    background: linear-gradient(325deg, rgb(0,53,0) 0%, #0a4708 50%, rgb(0,53,0) 100%);
+}
+.Material-PIB {
+    color: #74ad5e;
+    background: rgb(0,53,0);
+    background: linear-gradient(325deg, rgb(0,53,0) 0%, #0a4708 50%, rgb(0,53,0) 100%);
+}
+.Material-PPA {
+    color: #74ad5e;
+    background: rgb(0,53,0);
+    background: linear-gradient(325deg, rgb(0,53,0) 0%, #0a4708 50%, rgb(0,53,0) 100%);
+}
+.Material-RCO {
+    color: #74ad5e;
+    background: rgb(0,53,0);
+    background: linear-gradient(325deg, rgb(0,53,0) 0%, #0a4708 50%, rgb(0,53,0) 100%);
+}
+.Material-RSI {
+    color: #74ad5e;
+    background: rgb(0,53,0);
+    background: linear-gradient(325deg, rgb(0,53,0) 0%, #0a4708 50%, rgb(0,53,0) 100%);
+}
+.Material-LHP {
+    color: rgb(255, 226, 127);
+    background: rgb(153, 99, 0);
+    background: linear-gradient(325deg, rgb(153, 99, 0) 0%, rgb(178, 124, 25) 50%, rgb(153, 99, 0) 100%);
+}
+.Material-NV1 {
+    color: rgb(255, 226, 127);
+    background: rgb(153, 99, 0);
+    background: linear-gradient(325deg, rgb(153, 99, 0) 0%, rgb(178, 124, 25) 50%, rgb(153, 99, 0) 100%);
+}
+.Material-NV2 {
+    color: rgb(255, 226, 127);
+    background: rgb(153, 99, 0);
+    background: linear-gradient(325deg, rgb(153, 99, 0) 0%, rgb(178, 124, 25) 50%, rgb(153, 99, 0) 100%);
+}
+.Material-SSC {
+    color: rgb(255, 226, 127);
+    background: rgb(153, 99, 0);
+    background: linear-gradient(325deg, rgb(153, 99, 0) 0%, rgb(178, 124, 25) 50%, rgb(153, 99, 0) 100%);
+}
+.Material-THP {
+    color: rgb(255, 226, 127);
+    background: rgb(153, 99, 0);
+    background: linear-gradient(325deg, rgb(153, 99, 0) 0%, rgb(178, 124, 25) 50%, rgb(153, 99, 0) 100%);
+}
+.Material-TCO {
+    color: rgb(255, 240, 200);
+    background: rgb(153, 113, 73);
+    background: linear-gradient(325deg, rgb(153, 113, 73) 0%, rgb(178, 138, 98) 50%, rgb(153, 113, 73) 100%);
+}
+.Material-CMK {
+    color: rgb(151, 218, 255);
+    background: rgb(24, 91, 211);
+    background: linear-gradient(325deg, rgb(24, 91, 211) 0%, rgb(49, 116, 236) 50%, rgb(24, 91, 211) 100%);
+}
+.Material-MED {
+    color: #ff989e;
+    background: #a62c2a;
+    background: linear-gradient(325deg, #a62c2a 0%, #ba363c 50%, #a62c2a 100%);
+}
+.Material-LTA {
+    color: rgb(142, 157, 225);
+    background: rgb(15, 30, 98);
+    background: linear-gradient(325deg, rgb(15, 30, 98) 0%, rgb(40, 55, 123) 50%, rgb(15, 30, 98) 100%);
+}
+.Material-VSC {
+    color: rgb(255, 211, 127);
+    background: rgb(154, 84, 0);
+    background: linear-gradient(325deg, rgb(154, 84, 0) 0%, rgb(178, 109, 25) 50%, rgb(154, 84, 0) 100%);
+}
+.Material-BTS {
+    color: rgb(241, 255, 255);
+    background: rgb(114, 164, 202);
+    background: linear-gradient(325deg, rgb(114, 164, 202) 0%, rgb(139, 189, 227) 50%, rgb(114, 164, 202) 100%);
+}
+.Material-ALE {
+    color: #db9191;
+    background: rgb(104,0,0);
+    background: linear-gradient(325deg, rgb(104,0,0) 0%, #7b0012 50%, rgb(104,0,0) 100%);
+}
+.Material-COF {
+    color: #db9191;
+    background: rgb(104,0,0);
+    background: linear-gradient(325deg, rgb(104,0,0) 0%, #7b0012 50%, rgb(104,0,0) 100%);
+}
+.Material-GIN {
+    color: #db9191;
+    background: rgb(104,0,0);
+    background: linear-gradient(325deg, rgb(104,0,0) 0%, #7b0012 50%, rgb(104,0,0) 100%);
+}
+.Material-KOM {
+    color: #db9191;
+    background: rgb(104,0,0);
+    background: linear-gradient(325deg, rgb(104,0,0) 0%, #7b0012 50%, rgb(104,0,0) 100%);
+}
+.Material-H2O {
+    color: rgb(241, 255, 255);
+    background: rgb(114, 164, 202);
+    background: linear-gradient(325deg, rgb(114, 164, 202) 0%, rgb(139, 189, 227) 50%, rgb(114, 164, 202) 100%);
+}
+.Material-HEX {
+    color: rgb(241, 255, 255);
+    background: rgb(114, 164, 202);
+    background: linear-gradient(325deg, rgb(114, 164, 202) 0%, rgb(139, 189, 227) 50%, rgb(114, 164, 202) 100%);
+}
+.Material-LES {
+    color: rgb(241, 255, 255);
+    background: rgb(114, 164, 202);
+    background: linear-gradient(325deg, rgb(114, 164, 202) 0%, rgb(139, 189, 227) 50%, rgb(114, 164, 202) 100%);
+}
+.Material-OFF {
+    color: rgb(255, 255, 255);
+    background: rgb(161, 148, 136);
+    background: linear-gradient(325deg, rgb(161, 148, 136) 0%, rgb(186, 173, 161) 50%, rgb(161, 148, 136) 100%);
+}
+.Material-SUN {
+    color: rgb(255, 255, 255);
+    background: rgb(161, 148, 136);
+    background: linear-gradient(325deg, rgb(161, 148, 136) 0%, rgb(186, 173, 161) 50%, rgb(161, 148, 136) 100%);
+}
+.Material-UTS {
+    color: rgb(255, 255, 255);
+    background: rgb(161, 148, 136);
+    background: linear-gradient(325deg, rgb(161, 148, 136) 0%, rgb(186, 173, 161) 50%, rgb(161, 148, 136) 100%);
+}
+.Material-RDE {
+    color: rgb(142, 157, 225);
+    background: rgb(15, 30, 98);
+    background: linear-gradient(325deg, rgb(15, 30, 98) 0%, rgb(40, 55, 123) 50%, rgb(15, 30, 98) 100%);
+}
+.Material-LSL {
+    color: rgb(255, 211, 127);
+    background: rgb(154, 84, 0);
+    background: linear-gradient(325deg, rgb(154, 84, 0) 0%, rgb(178, 109, 25) 50%, rgb(154, 84, 0) 100%);
+}
+.Material-MCB {
+    color: rgb(255, 211, 127);
+    background: rgb(154, 84, 0);
+    background: linear-gradient(325deg, rgb(154, 84, 0) 0%, rgb(178, 109, 25) 50%, rgb(154, 84, 0) 100%);
+}
+.Material-MFL {
+    color: rgb(255, 211, 127);
+    background: rgb(154, 84, 0);
+    background: linear-gradient(325deg, rgb(154, 84, 0) 0%, rgb(178, 109, 25) 50%, rgb(154, 84, 0) 100%);
+}
+.Material-WCB {
+    color: rgb(255, 211, 127);
+    background: rgb(154, 84, 0);
+    background: linear-gradient(325deg, rgb(154, 84, 0) 0%, rgb(178, 109, 25) 50%, rgb(154, 84, 0) 100%);
+}
+.Material-NA {
+    color: rgb(188, 173, 159);
+    background: rgb(61, 46, 32);
+    background: linear-gradient(325deg, rgb(61, 46, 32) 0%, rgb(86, 71, 57) 50%, rgb(61, 46, 32) 100%);
+}
+.Material-RSE {
+    color: rgb(142, 157, 225);
+    background: rgb(15, 30, 98);
+    background: linear-gradient(325deg, rgb(15, 30, 98) 0%, rgb(40, 55, 123) 50%, rgb(15, 30, 98) 100%);
+}
+.Material-RTA {
+    color: rgb(142, 157, 225);
+    background: rgb(15, 30, 98);
+    background: linear-gradient(325deg, rgb(15, 30, 98) 0%, rgb(40, 55, 123) 50%, rgb(15, 30, 98) 100%);
+}
+.Material-FF {
+    color: #cbfaa3;
+    background: #548d22;
+    background: linear-gradient(325deg, #548d22 0%, #6ba23c 50%, #548d22 100%);
+}
+.Material-SF {
+    color: #cbfaa3;
+    background: #548d22;
+    background: linear-gradient(325deg, #548d22 0%, #6ba23c 50%, #548d22 100%);
+}
+.Material-LCB {
+    color: rgb(255, 211, 127);
+    background: rgb(154, 84, 0);
+    background: linear-gradient(325deg, rgb(154, 84, 0) 0%, rgb(178, 109, 25) 50%, rgb(154, 84, 0) 100%);
+}
+.Material-LFL {
+    color: rgb(255, 211, 127);
+    background: rgb(154, 84, 0);
+    background: linear-gradient(325deg, rgb(154, 84, 0) 0%, rgb(178, 109, 25) 50%, rgb(154, 84, 0) 100%);
+}
+.Material-VEG {
+    color: #74ad5e;
+    background: rgb(0,53,0);
+    background: linear-gradient(325deg, rgb(0,53,0) 0%, #0a4708 50%, rgb(0,53,0) 100%);
+}
+.Material-VIT {
+    color: #74ad5e;
+    background: rgb(0,53,0);
+    background: linear-gradient(325deg, rgb(0,53,0) 0%, #0a4708 50%, rgb(0,53,0) 100%);
+}
+.Material-ABH {
+    color: rgb(142, 157, 225);
+    background: rgb(15, 30, 98);
+    background: linear-gradient(325deg, rgb(15, 30, 98) 0%, rgb(40, 55, 123) 50%, rgb(15, 30, 98) 100%);
+}
+.Material-ADE {
+    color: rgb(142, 157, 225);
+    background: rgb(15, 30, 98);
+    background: linear-gradient(325deg, rgb(15, 30, 98) 0%, rgb(40, 55, 123) 50%, rgb(15, 30, 98) 100%);
+}
+.Material-ASE {
+    color: rgb(142, 157, 225);
+    background: rgb(15, 30, 98);
+    background: linear-gradient(325deg, rgb(15, 30, 98) 0%, rgb(40, 55, 123) 50%, rgb(15, 30, 98) 100%);
+}
+.Material-ATA {
+    color: rgb(142, 157, 225);
+    background: rgb(15, 30, 98);
+    background: linear-gradient(325deg, rgb(15, 30, 98) 0%, rgb(40, 55, 123) 50%, rgb(15, 30, 98) 100%);
+}
+.Material-BBH {
+    color: rgb(142, 157, 225);
+    background: rgb(15, 30, 98);
+    background: linear-gradient(325deg, rgb(15, 30, 98) 0%, rgb(40, 55, 123) 50%, rgb(15, 30, 98) 100%);
+}
+.Material-BDE {
+    color: rgb(142, 157, 225);
+    background: rgb(15, 30, 98);
+    background: linear-gradient(325deg, rgb(15, 30, 98) 0%, rgb(40, 55, 123) 50%, rgb(15, 30, 98) 100%);
+}
+.Material-BSE {
+    color: rgb(142, 157, 225);
+    background: rgb(15, 30, 98);
+    background: linear-gradient(325deg, rgb(15, 30, 98) 0%, rgb(40, 55, 123) 50%, rgb(15, 30, 98) 100%);
+}
+.Material-BTA {
+    color: rgb(142, 157, 225);
+    background: rgb(15, 30, 98);
+    background: linear-gradient(325deg, rgb(15, 30, 98) 0%, rgb(40, 55, 123) 50%, rgb(15, 30, 98) 100%);
+}
+.Material-HSE {
+    color: rgb(142, 157, 225);
+    background: rgb(15, 30, 98);
+    background: linear-gradient(325deg, rgb(15, 30, 98) 0%, rgb(40, 55, 123) 50%, rgb(15, 30, 98) 100%);
+}
+.Material-LBH {
+    color: rgb(142, 157, 225);
+    background: rgb(15, 30, 98);
+    background: linear-gradient(325deg, rgb(15, 30, 98) 0%, rgb(40, 55, 123) 50%, rgb(15, 30, 98) 100%);
+}
+.Material-LDE {
+    color: rgb(142, 157, 225);
+    background: rgb(15, 30, 98);
+    background: linear-gradient(325deg, rgb(15, 30, 98) 0%, rgb(40, 55, 123) 50%, rgb(15, 30, 98) 100%);
+}
+.Material-MSL {
+    color: rgb(255, 211, 127);
+    background: rgb(154, 84, 0);
+    background: linear-gradient(325deg, rgb(154, 84, 0) 0%, rgb(178, 109, 25) 50%, rgb(154, 84, 0) 100%);
+}
+.Material-SCB {
+    color: rgb(255, 211, 127);
+    background: rgb(154, 84, 0);
+    background: linear-gradient(325deg, rgb(154, 84, 0) 0%, rgb(178, 109, 25) 50%, rgb(154, 84, 0) 100%);
+}
+.Material-SFL {
+    color: rgb(255, 211, 127);
+    background: rgb(154, 84, 0);
+    background: linear-gradient(325deg, rgb(154, 84, 0) 0%, rgb(178, 109, 25) 50%, rgb(154, 84, 0) 100%);
+}
+.Material-SSL {
+    color: rgb(255, 211, 127);
+    background: rgb(154, 84, 0);
+    background: linear-gradient(325deg, rgb(154, 84, 0) 0%, rgb(178, 109, 25) 50%, rgb(154, 84, 0) 100%);
+}
+.Material-TCB {
+    color: rgb(255, 211, 127);
+    background: rgb(154, 84, 0);
+    background: linear-gradient(325deg, rgb(154, 84, 0) 0%, rgb(178, 109, 25) 50%, rgb(154, 84, 0) 100%);
+}
+.Material-VCB {
+    color: rgb(255, 211, 127);
+    background: rgb(154, 84, 0);
+    background: linear-gradient(325deg, rgb(154, 84, 0) 0%, rgb(178, 109, 25) 50%, rgb(154, 84, 0) 100%);
+}
+.Material-BRP {
+    color: rgb(230 230,127);
+    background: rgb(224, 131, 0);
+    background: linear-gradient(325deg, rgb(224, 131, 0) 0%, rgb(249, 156, 25) 50%, rgb(224, 131, 0) 100%);
+}
+.Material-FIR {
+    color: rgb(255, 168, 127);
+    background: rgb(153, 41, 0);
+    background: linear-gradient(325deg, rgb(153, 41, 0) 0%, rgb(178, 66, 25) 50%, rgb(153, 41, 0) 100%);
+}
+.Material-AU {
+    color: rgb(181, 181, 181);
+    background: rgb(54, 54, 54);
+    background: linear-gradient(325deg, rgb(54, 54, 54) 0%, rgb(79, 79, 79) 50%, rgb(54, 54, 54) 100%);
+}
+.Material-DCM {
+    color: #f89ee1;
+    background: rgb(121,31,98);
+    background: linear-gradient(325deg, rgb(121,31,98) 0%, #92387b 50%, rgb(121,31,98) 100%);
+}
+.Material-F {
+    color: rgb(127, 232, 234);
+    background: rgb(0, 105, 107);
+    background: linear-gradient(325deg, rgb(0, 105, 107) 0%, rgb(25, 130, 132) 50%, rgb(0, 105, 107) 100%);
+}
+.Material-HE {
+    color: rgb(127, 232, 234);
+    background: rgb(0, 105, 107);
+    background: linear-gradient(325deg, rgb(0, 105, 107) 0%, rgb(25, 130, 132) 50%, rgb(0, 105, 107) 100%);
+}
+.Material-LSE {
+    color: rgb(142, 157, 225);
+    background: rgb(15, 30, 98);
+    background: linear-gradient(325deg, rgb(15, 30, 98) 0%, rgb(40, 55, 123) 50%, rgb(15, 30, 98) 100%);
+}
+.Material-RBH {
+    color: rgb(142, 157, 225);
+    background: rgb(15, 30, 98);
+    background: linear-gradient(325deg, rgb(15, 30, 98) 0%, rgb(40, 55, 123) 50%, rgb(15, 30, 98) 100%);
+}
+.Material-RSH {
+    color: rgb(168, 204, 234);
+    background: rgb(41, 77, 107);
+    background: linear-gradient(325deg, rgb(41, 77, 107) 0%, rgb(66, 102, 132) 50%, rgb(41, 77, 107) 100%);
+}
+.Material-RAG {
+    color: rgb(255, 168, 127);
+    background: rgb(153, 41, 0);
+    background: linear-gradient(325deg, rgb(153, 41, 0) 0%, rgb(178, 66, 25) 50%, rgb(153, 41, 0) 100%);
+}
+.Material-ALG {
+    color: #74ad5e;
+    background: rgb(0,53,0);
+    background: linear-gradient(325deg, rgb(0,53,0) 0%, #0a4708 50%, rgb(0,53,0) 100%);
+}
+.Material-RHP {
+    color: rgb(255, 226, 127);
+    background: rgb(153, 99, 0);
+    background: linear-gradient(325deg, rgb(153, 99, 0) 0%, rgb(178, 124, 25) 50%, rgb(153, 99, 0) 100%);
+}

@@ -1,0 +1,224 @@
+import requests, json
+
+APPDATAFIELD = "applicationData"
+
+# TODO: Find a way to recommend that calling applications create and supply their own default configs that are customised to the app use.
+DEFAULTCONFIG = dict({
+                "auth": None,
+                "group": None,
+                APPDATAFIELD: {},
+            })
+
+
+class DataManager():
+    materialData = dict()
+    fleetData = dict()
+    shipRegistrationIndex = dict()
+
+    def __init__(self,configDict = {},defaultConfig = DEFAULTCONFIG):
+        self.configPath = configDict["ConfigPath"] if "ConfigPath" in configDict else None # Where to look for the config 
+        self.statusBar = configDict["QtStatusBar"] if "QtStatusBar" in configDict else None # A tuple containing (the QtStatusBar object, Start Index), so that the PDM can manage notifications itself
+        # NOTE: Right Now, the PDM is hardcoded with Qt modules in mind in this section. In the future, I want to have everything external to this module (Like Qt) be handled by an import of PDM.
+        self.badConfig = False
+        try:
+            with open(self.configPath,"r") as configFile:
+                self.config = json.load(configFile)
+                for key in defaultConfig:
+                    if key not in self.config:
+                        self.config = defaultConfig
+                        self.badConfig = True # Indicate that the user might not want to overwrite their existing config
+                        break
+        except:
+            self.config = defaultConfig
+        self.loadMaterialInformation() # TODO: Move this to a connect() function that can be used to check the online state of the program simultaneously. 
+    
+    def getFioHeaders(self):
+        return {
+            "Authorization" : self.config["auth"],
+            }
+
+    def loadMaterialInformation(self):
+        r = requests.get("https://rest.fnar.net/material/allmaterials")
+        if r.status_code == 200:
+            rContent = json.loads(r.content)
+            for material in rContent:
+                self.materialData[material["Ticker"]] = material
+        else:
+            () #TODO: Signal inability to download material information
+        return
+    
+    def getMaterialStorageProperties(self,ticker):
+        return self.materialData[ticker]["Weight"], self.materialData[ticker]["Volume"]
+
+    def online(self): # TODO: Rework to be less application specific: Either guarantee that self.materialInformation is loaded when online (by having it be loaded) or find an alternative indicator.
+        return len(self.materialData) != 0
+
+    def validMaterialTicker(self, material):
+        if len(self.materialData) == 0:
+            return True 
+            # This is to allow offline use, otherwise even valid materials would be rejected when there isn't a valid connection. 
+            # Programs should instead use the online() method to check whether or not the PDM has data if you wish to prevent operations in offline mode.
+        return material in self.materialData
+
+    def loadWorkforceData(self):
+        if not self.fetchWorkforceNeeds():
+            return False
+        if self.config["auth"] != None:
+            self.trackedUsers = (self.user)
+            if self.config["group"] != None:
+                self.fetchGroupData()
+                if self.groupData == None:
+                    ()
+                    # TODO: signal to user that provided Group ID is not working.
+                else:
+                    self.trackedUsers = list()
+                    for user in self.groupData["GroupUsers"]:
+                        self.trackedUsers.append(user["GroupUserName"])
+                    self.trackedUsers = tuple(self.trackedUsers)
+                    if self.user not in self.trackedUsers:
+                        ()
+                        # TODO: signal to user that they are not in the tracked group, and this might cause problems!
+        return True
+
+    def save(self,configPath = None, forceWrite = False): 
+        if self.badConfig and not forceWrite:
+            return False
+        if configPath == None:
+            configPath = self.configPath
+        try:
+            with open(configPath,"w") as configFile:
+                json.dump(self.config, configFile, indent = 6)
+            return True
+        except:
+            return False
+
+    def authenticate(self): # TODO: Make this use the QtStatusBar if given
+        self.user = None
+        if self.config["auth"] == None:
+            self.authed = -1
+            return self.authed
+        r = requests.get("https://rest.fnar.net/auth", headers=self.getFioHeaders())
+        if r.status_code == 200:
+            self.authed = 0
+            self.user = r.text
+        else:
+            self.authed = 1
+        return self.authed
+    
+    def getCurrentUser(self):
+        return self.user
+    
+    def getAuthState(self):
+        return self.authed
+
+    def fetchGroupData(self):
+        r = requests.get("https://rest.fnar.net/auth/group/"+self.config["group"])
+        if r.status_code != 200:
+            self.groupData = None
+            return False
+        self.groupData = json.loads(r.content)
+        return True
+
+    def fetchWorkforceNeeds(self):
+        self.workerData = None
+        r = requests.get("https://rest.fnar.net/global/workforceneeds")
+        if r.status_code != 200:
+            return False
+        rContent = json.loads(r.content)
+        self.workerData = dict()
+        for entry in rContent:
+            self.workerData[entry["WorkforceType"]] = dict()
+            for need in entry["Needs"]:
+                self.workerData[entry["WorkforceType"]][need["MaterialTicker"]] = need["Amount"]
+        return True
+
+    def getUserPlanetBurn(self,user,planet): # TODO: Complete
+        r = requests.get("https://rest.fnar.net/workforce/"+user+"/"+planet, headers=self.getFioHeaders())
+
+    def getTrackedPlanets(self): # TODO: Rework to be less application specific. Move field under config applicationData field
+        return self.config["planets"]
+
+    def getTrackedSystems(self): # TODO: Rework to be less application specific. Move field under config applicationData field
+        return self.config["systems"]
+
+    def getAppData(self,field):
+        if field in self.config[APPDATAFIELD]:
+            return self.config[APPDATAFIELD][field]
+        return None
+    
+    def setAppData(self,field,data):
+        if field in self.config[APPDATAFIELD]:
+            self.config[APPDATAFIELD][field] = data
+            return True
+        return False
+    
+    def createAppData(self,field,reset = False):
+        if reset or field not in self.config[APPDATAFIELD]:
+            self.config[APPDATAFIELD][field] = None
+            return True
+        return False
+    
+    def deleteAppData(self,field):
+        if field in self.config[APPDATAFIELD]:
+            del self.config[APPDATAFIELD][field]
+            return True
+        return False
+    
+    def getAllPlanetWorkerMats(self): # TODO: Rework to be less application specific
+        matDict = dict()
+        for planet in self.config["planets"]:
+            trackedWorkforces = self.config["planets"][planet]
+            matDict[planet] = list()
+            for workforce in trackedWorkforces:
+                matDict[planet].extend(self.workerData[workforce].keys())
+            matDict[planet] = set(matDict[planet])
+        return matDict
+
+    # Return values: -1: Invalid argument format    0: All good    1: Could not fully fetch data
+    def fetchFleetsByUsers(self,usernames): # Fetches fleet data from all the users in the input.
+        if type(usernames) not in (tuple,list,set):
+            return -1
+        status = 0
+        tmpShipData = []
+        tmpFlightData = []
+        for username in usernames:
+            r = requests.get("https://rest.fnar.net/ship/ships/"+username, headers=self.getFioHeaders())
+            if r.status_code not in (200,204):
+                status = 1
+            else:
+                tmpShipData.extend(json.loads(r.content) if r.status_code == 200 else [])
+            r = requests.get("https://rest.fnar.net/ship/flights/"+username, headers=self.getFioHeaders())
+            if r.status_code not in (200,204):
+                status = 1
+            else:
+                tmpFlightData.extend(json.loads(r.content) if r.status_code == 200 else [])
+        
+        #Compounds the ship information under one key
+        for ship in tmpShipData:
+            self.fleetData[ship["Registration"]] = ship
+            self.shipRegistrationIndex[ship["ShipId"]] = ship["Registration"]
+        for ship in tmpFlightData:
+            self.fleetData[self.shipRegistrationIndex[ship["ShipId"]]].update(ship)
+        
+        #transplants the ship's storage information into the ship's entry
+        for transponder in self.fleetData:
+            if "StoreId" in self.fleetData[transponder]:
+                r = requests.get("https://rest.fnar.net/storage/"+self.fleetData[transponder]["UserNameSubmitted"]+"/"+self.fleetData[transponder]["StoreId"], headers=self.getFioHeaders())
+                if r.status_code == 200:
+                    self.fleetData[transponder]["Storage"] = json.loads(r.content)
+
+
+
+        return status
+    
+    def getFleetData(self):
+        return self.fleetData
+
+    def getShipData(self, transponder):
+        return self.fleetData[transponder] if transponder in self.fleetData else {}
+
+    def updateAllData(self):
+        return
+        #TODO: Make this function go over all presently **loaded** data and refresh it from the FIO API. Also maybe have it have a lockout (I.e. can only be called once a minute or once every 5 minutes)
+
+    
