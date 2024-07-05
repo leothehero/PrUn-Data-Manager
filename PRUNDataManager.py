@@ -10,18 +10,21 @@ DEFAULTCONFIG = dict({
             })
 
 def customGet(url, headers=None):
-    r 
-    try:
-        r = requests.get(url, headers = headers, timeout=10)
-    except requests.exceptions.Timeout:
-        r = requests.Response()
-        r.status_code = -1
+    r = requests.Response()
+    for i in range(3):
+        try:
+            r = requests.get(url, headers = headers, timeout=10)
+            break;
+        except requests.exceptions.Timeout:
+            r.status_code = -1
+            print("PDM: Request Timeout, Loop "+str(i))
     return r
 
 class DataManager():
     materialData = dict()
     fleetData = dict()
     shipRegistrationIndex = dict()
+    userData = dict()
 
     def __init__(self,configDict = {},defaultConfig = DEFAULTCONFIG):
         print("PDM: Initializing")
@@ -252,6 +255,22 @@ class DataManager():
                     print("PDM: Failed")
         print("PDM: Fleet Fetch Complete")
         return status
+    
+    def fetchUserInfo(self,username):
+        print("PDM: Fetching User Info for "+username)
+        r = customGet("https://rest.fnar.net/user/"+username, headers=self.getFioHeaders())
+        if r.status_code == 200:
+            print("PDM: Success!")
+            self.userData[username.upper()] = json.loads(r.content)
+            return True
+        print("PDM: Failed")
+        return False
+
+    def getUserInfo(self,username):
+        if username.upper() in self.userData:
+            return self.userData[username.upper()]
+        else:
+            return self.userData[username.upper()] if self.fetchUserInfo(username) else {}
     
     def getFleetData(self):
         return self.fleetData
