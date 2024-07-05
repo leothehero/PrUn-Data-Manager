@@ -16,20 +16,25 @@ class DataManager():
     shipRegistrationIndex = dict()
 
     def __init__(self,configDict = {},defaultConfig = DEFAULTCONFIG):
+        print("PDM: Initializing")
         self.configPath = configDict["ConfigPath"] if "ConfigPath" in configDict else None # Where to look for the config 
         self.statusBar = configDict["QtStatusBar"] if "QtStatusBar" in configDict else None # A tuple containing (the QtStatusBar object, Start Index), so that the PDM can manage notifications itself
         # NOTE: Right Now, the PDM is hardcoded with Qt modules in mind in this section. In the future, I want to have everything external to this module (Like Qt) be handled by an import of PDM.
         self.badConfig = False
         try:
+            print("PDM: Starting Configuration Load")
             with open(self.configPath,"r") as configFile:
                 self.config = json.load(configFile)
                 for key in defaultConfig:
                     if key not in self.config:
                         self.config = defaultConfig
                         self.badConfig = True # Indicate that the user might not want to overwrite their existing config
+                        print("PDM: Bad config, resetting to default")
                         break
         except:
+            print("PDM: Load failure, loading default")
             self.config = defaultConfig
+        print("PDM: Config load finished")
         self.loadMaterialInformation() # TODO: Move this to a connect() function that can be used to check the online state of the program simultaneously. 
     
     def getFioHeaders(self):
@@ -38,12 +43,15 @@ class DataManager():
             }
 
     def loadMaterialInformation(self):
+        print("PDM: Fetching Materials")
         r = requests.get("https://rest.fnar.net/material/allmaterials")
         if r.status_code == 200:
+            print("PDM: Material Fetch Success")
             rContent = json.loads(r.content)
             for material in rContent:
                 self.materialData[material["Ticker"]] = material
         else:
+            print("PDM: Could not Fetch Materials: "+ str(r.status_code))
             () #TODO: Signal inability to download material information
         return
     
@@ -61,6 +69,7 @@ class DataManager():
         return material in self.materialData
 
     def loadWorkforceData(self):
+        print("PDM: Loading Workforce Needs")
         if not self.fetchWorkforceNeeds():
             return False
         if self.config["auth"] != None:
@@ -77,31 +86,39 @@ class DataManager():
                     self.trackedUsers = tuple(self.trackedUsers)
                     if self.user not in self.trackedUsers:
                         ()
+                        print("PDM: Authenticated User is not in the tracked group!")
                         # TODO: signal to user that they are not in the tracked group, and this might cause problems!
         return True
 
-    def save(self,configPath = None, forceWrite = False): 
+    def save(self,configPath = None, forceWrite = False):
         if self.badConfig and not forceWrite:
+            print("PDM: Aborted config write due to bad config")
             return False
         if configPath == None:
             configPath = self.configPath
         try:
             with open(configPath,"w") as configFile:
                 json.dump(self.config, configFile, indent = 6)
+            print("PDM: Config Write Succeeded")
             return True
         except:
+            print("PDM: Config Write Failed")
             return False
 
     def authenticate(self): # TODO: Make this use the QtStatusBar if given
+        print("PDM: Authenticating")
         self.user = None
         if self.config["auth"] == None:
             self.authed = -1
+            print("PDM: No Authentication Key In Config")
             return self.authed
         r = requests.get("https://rest.fnar.net/auth", headers=self.getFioHeaders())
         if r.status_code == 200:
+            print("PDM: Success!")
             self.authed = 0
             self.user = r.text
         else:
+            print("PDM: Authentication Error: "+str(r.status_code))
             self.authed = 1
         return self.authed
     
@@ -112,17 +129,22 @@ class DataManager():
         return self.authed
 
     def fetchGroupData(self):
+        print("PDM: Fetching Group Data")
         r = requests.get("https://rest.fnar.net/auth/group/"+self.config["group"])
         if r.status_code != 200:
+            print("PDM: Fetch Failed: "+str(r.status_code))
             self.groupData = None
             return False
         self.groupData = json.loads(r.content)
+        print("PDM: Group Data Loaded")
         return True
 
     def fetchWorkforceNeeds(self):
+        print("PDM: Fetching Workforce Needs")
         self.workerData = None
         r = requests.get("https://rest.fnar.net/global/workforceneeds")
         if r.status_code != 200:
+            print("PDM: Fetch Failed: "+str(r.status_code))
             return False
         rContent = json.loads(r.content)
         self.workerData = dict()
@@ -130,6 +152,7 @@ class DataManager():
             self.workerData[entry["WorkforceType"]] = dict()
             for need in entry["Needs"]:
                 self.workerData[entry["WorkforceType"]][need["MaterialTicker"]] = need["Amount"]
+        print("PDM: Workforce Need Data Loaded")
         return True
 
     def getUserPlanetBurn(self,user,planet): # TODO: Complete
@@ -153,6 +176,7 @@ class DataManager():
         return False
     
     def createAppData(self,field,reset = False):
+        print("PDM: Creating New AppData field: "+field)
         if reset or field not in self.config[APPDATAFIELD]:
             self.config[APPDATAFIELD][field] = None
             return True
@@ -165,6 +189,7 @@ class DataManager():
         return False
     
     def getAllPlanetWorkerMats(self): # TODO: Rework to be less application specific
+        print("PDM: Loadng Planet Worker Materials")
         matDict = dict()
         for planet in self.config["planets"]:
             trackedWorkforces = self.config["planets"][planet]
@@ -176,24 +201,30 @@ class DataManager():
 
     # Return values: -1: Invalid argument format    0: All good    1: Could not fully fetch data
     def fetchFleetsByUsers(self,usernames): # Fetches fleet data from all the users in the input.
-        if type(usernames) not in (tuple,list,set):
+        print("PDM: Fetching fleet data By username")
+        if type(usernames) != set:
+            print("PDM: Invalid Argument Format")
             return -1
         status = 0
         tmpShipData = []
         tmpFlightData = []
         for username in usernames:
+            print("PDM: Fetching ship data for "+username)
+            print("PDM: 1/2")
             r = requests.get("https://rest.fnar.net/ship/ships/"+username, headers=self.getFioHeaders())
             if r.status_code not in (200,204):
                 status = 1
             else:
                 tmpShipData.extend(json.loads(r.content) if r.status_code == 200 else [])
+            print("PDM: 2/2")
             r = requests.get("https://rest.fnar.net/ship/flights/"+username, headers=self.getFioHeaders())
             if r.status_code not in (200,204):
                 status = 1
             else:
                 tmpFlightData.extend(json.loads(r.content) if r.status_code == 200 else [])
         
-        #Compounds the ship information under one key
+        #Combining the ship information under one key
+        print("PDM: Combining Ship Data")
         for ship in tmpShipData:
             self.fleetData[ship["Registration"]] = ship
             self.shipRegistrationIndex[ship["ShipId"]] = ship["Registration"]
@@ -201,14 +232,17 @@ class DataManager():
             self.fleetData[self.shipRegistrationIndex[ship["ShipId"]]].update(ship)
         
         #transplants the ship's storage information into the ship's entry
+        print("PDM: Getting Ship Store Data")
         for transponder in self.fleetData:
             if "StoreId" in self.fleetData[transponder]:
+                print("PDM: Fetching Store of Ship "+transponder)
                 r = requests.get("https://rest.fnar.net/storage/"+self.fleetData[transponder]["UserNameSubmitted"]+"/"+self.fleetData[transponder]["StoreId"], headers=self.getFioHeaders())
                 if r.status_code == 200:
                     self.fleetData[transponder]["Storage"] = json.loads(r.content)
-
-
-
+                    print("PDM: Success!")
+                else:
+                    print("PDM: Failed")
+        print("PDM: Fleet Fetch Complete")
         return status
     
     def getFleetData(self):
@@ -218,6 +252,7 @@ class DataManager():
         return self.fleetData[transponder] if transponder in self.fleetData else {}
 
     def updateAllData(self):
+        print("PDM: Refreshing All Data")
         return
         #TODO: Make this function go over all presently **loaded** data and refresh it from the FIO API. Also maybe have it have a lockout (I.e. can only be called once a minute or once every 5 minutes)
 
