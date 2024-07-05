@@ -9,6 +9,14 @@ DEFAULTCONFIG = dict({
                 APPDATAFIELD: {},
             })
 
+def customGet(url, headers=None):
+    r 
+    try:
+        r = requests.get(url, headers = headers, timeout=10)
+    except requests.exceptions.Timeout:
+        r = requests.Response()
+        r.status_code = -1
+    return r
 
 class DataManager():
     materialData = dict()
@@ -44,7 +52,7 @@ class DataManager():
 
     def loadMaterialInformation(self):
         print("PDM: Fetching Materials")
-        r = requests.get("https://rest.fnar.net/material/allmaterials")
+        r = customGet("https://rest.fnar.net/material/allmaterials")
         if r.status_code == 200:
             print("PDM: Material Fetch Success")
             rContent = json.loads(r.content)
@@ -112,7 +120,7 @@ class DataManager():
             self.authed = -1
             print("PDM: No Authentication Key In Config")
             return self.authed
-        r = requests.get("https://rest.fnar.net/auth", headers=self.getFioHeaders())
+        r = customGet("https://rest.fnar.net/auth", headers=self.getFioHeaders())
         if r.status_code == 200:
             print("PDM: Success!")
             self.authed = 0
@@ -130,7 +138,7 @@ class DataManager():
 
     def fetchGroupData(self):
         print("PDM: Fetching Group Data")
-        r = requests.get("https://rest.fnar.net/auth/group/"+self.config["group"])
+        r = customGet("https://rest.fnar.net/auth/group/"+self.config["group"])
         if r.status_code != 200:
             print("PDM: Fetch Failed: "+str(r.status_code))
             self.groupData = None
@@ -142,7 +150,7 @@ class DataManager():
     def fetchWorkforceNeeds(self):
         print("PDM: Fetching Workforce Needs")
         self.workerData = None
-        r = requests.get("https://rest.fnar.net/global/workforceneeds")
+        r = customGet("https://rest.fnar.net/global/workforceneeds")
         if r.status_code != 200:
             print("PDM: Fetch Failed: "+str(r.status_code))
             return False
@@ -156,7 +164,7 @@ class DataManager():
         return True
 
     def getUserPlanetBurn(self,user,planet): # TODO: Complete
-        r = requests.get("https://rest.fnar.net/workforce/"+user+"/"+planet, headers=self.getFioHeaders())
+        r = customGet("https://rest.fnar.net/workforce/"+user+"/"+planet, headers=self.getFioHeaders())
 
     def getTrackedPlanets(self): # TODO: Rework to be less application specific. Move field under config applicationData field
         return self.config["planets"]
@@ -211,13 +219,13 @@ class DataManager():
         for username in usernames:
             print("PDM: Fetching ship data for "+username)
             print("PDM: 1/2")
-            r = requests.get("https://rest.fnar.net/ship/ships/"+username, headers=self.getFioHeaders())
+            r = customGet("https://rest.fnar.net/ship/ships/"+username, headers=self.getFioHeaders())
             if r.status_code not in (200,204):
                 status = 1
             else:
                 tmpShipData.extend(json.loads(r.content) if r.status_code == 200 else [])
             print("PDM: 2/2")
-            r = requests.get("https://rest.fnar.net/ship/flights/"+username, headers=self.getFioHeaders())
+            r = customGet("https://rest.fnar.net/ship/flights/"+username, headers=self.getFioHeaders())
             if r.status_code not in (200,204):
                 status = 1
             else:
@@ -236,7 +244,7 @@ class DataManager():
         for transponder in self.fleetData:
             if "StoreId" in self.fleetData[transponder]:
                 print("PDM: Fetching Store of Ship "+transponder)
-                r = requests.get("https://rest.fnar.net/storage/"+self.fleetData[transponder]["UserNameSubmitted"]+"/"+self.fleetData[transponder]["StoreId"], headers=self.getFioHeaders())
+                r = customGet("https://rest.fnar.net/storage/"+self.fleetData[transponder]["UserNameSubmitted"]+"/"+self.fleetData[transponder]["StoreId"], headers=self.getFioHeaders())
                 if r.status_code == 200:
                     self.fleetData[transponder]["Storage"] = json.loads(r.content)
                     print("PDM: Success!")
