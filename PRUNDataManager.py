@@ -219,7 +219,7 @@ class DataManager():
 
     # Return values: -1: Invalid argument format    0: All good    1: Could not fully fetch data
     def fetchFleetsByUsers(self,usernames): # Fetches fleet data from all the users in the input.
-        print("PDM: Fetching fleet data By username")
+        print("PDM: Fetching fleet data by Username")
         if type(usernames) != set:
             print("PDM: Invalid Argument Format")
             return -1
