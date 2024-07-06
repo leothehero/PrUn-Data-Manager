@@ -1,3 +1,4 @@
+import sys
 import requests, json
 
 APPDATAFIELD = "applicationData"
@@ -25,6 +26,9 @@ class DataManager():
     fleetData = dict()
     shipRegistrationIndex = dict()
     userData = dict()
+    planetNIDs = None
+    planetNames = None
+    CXdata = None
 
     def __init__(self,configDict = {},defaultConfig = DEFAULTCONFIG):
         print("PDM: Initializing")
@@ -169,6 +173,9 @@ class DataManager():
     def getUserPlanetBurn(self,user,planet): # TODO: Complete
         r = customGet("https://rest.fnar.net/workforce/"+user+"/"+planet, headers=self.getFioHeaders())
 
+        raise NotImplementedError
+
+
     def getTrackedPlanets(self): # TODO: Rework to be less application specific. Move field under config applicationData field
         return self.config["planets"]
 
@@ -280,7 +287,60 @@ class DataManager():
 
     def updateAllData(self):
         print("PDM: Refreshing All Data")
-        return
+        raise NotImplementedError
         #TODO: Make this function go over all presently **loaded** data and refresh it from the FIO API. Also maybe have it have a lockout (I.e. can only be called once a minute or once every 5 minutes)
 
+    def fetchPlanetNameData(self):
+        # NOTE: This function fetches solely the naturalId and Name pairs of planets! This is much faster than fetchPlanetFullData(), but less comprehensive.
+        # It is recommended to avoid using fetchPlanetFullData() unless absolutely necessary, instead using fetchPlanetData() or searchForPlanet().
+        r = customGet("https://rest.fnar.net/planet/allplanets")
+        if r.status_code != 200:
+            return False
+        c = json.loads(r.content)
+        self.planetNIDs = {}
+        self.planetNames = {}
+        for element in c:
+            self.planetNIDs[element["PlanetNaturalId"]] = element["PlanetName"]
+            self.planetNames[element["PlanetName"]] = element["PlanetNaturalId"]
+        return True
     
+    def fetchPlanetFullData(self):
+        # NOTE: If you absolutely have to use this function, please async it. Otherwise, use any of the other planet functions.
+        raise NotImplementedError
+        return
+    
+    def fetchStationData(self):
+        r = customGet("https://rest.fnar.net/exchange/station")
+        if r.status_code != 200:
+            return False
+        self.CXdata = json.loads(r.content)
+
+
+
+    def getPlanetNameIndexes(self):
+        if not self.planetNIDs:
+            self.fetchPlanetNameData()
+        return self.planetNIDs or {}, self.planetNames or {}
+    
+    def isPlanet(self,location):
+        if not self.planetNIDs:
+            return True, True # Defaults to True so that offline function is not impeded.
+        return location in self.planetNIDs, location in self.planetNames
+    
+
+    def isStation(self, location):
+        for cx in self.CXdata:
+            if location.upper() in (cx["NaturalId"],cx["Name"].upper()):
+                return True
+        return False
+
+
+    def isLocation(self, location):
+        return self.isStation(location) or (True in self.isPlanet(location))
+
+
+"""pdm = DataManager()
+pdm.fetchStationData()
+pdm.fetchPlanetNameData()
+print("PDMTEST: "+ str(pdm.isLocation("VH-331g")))
+sys.exit()"""
