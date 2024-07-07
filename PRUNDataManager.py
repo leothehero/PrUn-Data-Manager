@@ -232,12 +232,14 @@ class DataManager():
             r = customGet("https://rest.fnar.net/ship/ships/"+username, headers=self.getFioHeaders())
             if r.status_code not in (200,204):
                 status = 1
+                continue
             else:
                 tmpShipData.extend(json.loads(r.content) if r.status_code == 200 else [])
             print("PDM: 2/2")
             r = customGet("https://rest.fnar.net/ship/flights/"+username, headers=self.getFioHeaders())
             if r.status_code not in (200,204):
                 status = 1
+                continue
             else:
                 tmpFlightData.extend(json.loads(r.content) if r.status_code == 200 else [])
         
@@ -251,7 +253,7 @@ class DataManager():
         
         #transplants the ship's storage information into the ship's entry
         print("PDM: Getting Ship Store Data")
-        for transponder in self.fleetData:
+        for transponder in self.fleetData: # TODO: Refactor this into calling user storage data once and then parsing locally instead
             if "StoreId" in self.fleetData[transponder]:
                 print("PDM: Fetching Store of Ship "+transponder)
                 r = customGet("https://rest.fnar.net/storage/"+self.fleetData[transponder]["UserNameSubmitted"]+"/"+self.fleetData[transponder]["StoreId"], headers=self.getFioHeaders())
@@ -260,6 +262,7 @@ class DataManager():
                     print("PDM: Success!")
                 else:
                     print("PDM: Failed")
+                    continue
         print("PDM: Fleet Fetch Complete")
         return status
     
