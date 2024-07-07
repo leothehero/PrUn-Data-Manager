@@ -219,6 +219,7 @@ class DataManager():
 
     # Return values: -1: Invalid argument format    0: All good    1: Could not fully fetch data
     def fetchFleetsByUsers(self,usernames): # Fetches fleet data from all the users in the input.
+        #TODO: Refactor this function
         print("PDM: Fetching fleet data by Username")
         if type(usernames) != set:
             print("PDM: Invalid Argument Format")
@@ -227,15 +228,18 @@ class DataManager():
         tmpShipData = []
         tmpFlightData = []
         for username in usernames:
-            print("PDM: Fetching ship data for "+username)
-            print("PDM: 1/2")
+            print("PDM: Fetching data for "+username)
+            print("PDM: 1/3")
             r = customGet("https://rest.fnar.net/ship/ships/"+username, headers=self.getFioHeaders())
             if r.status_code not in (200,204):
                 status = 1
+                print("PDM: Aborting data fetch for "+username)
                 continue
             else:
                 tmpShipData.extend(json.loads(r.content) if r.status_code == 200 else [])
-            print("PDM: 2/2")
+            print("PDM: 2/3")
+            self.fetchUserStorageData(username)
+            print("PDM: 3/3")
             r = customGet("https://rest.fnar.net/ship/flights/"+username, headers=self.getFioHeaders())
             if r.status_code not in (200,204):
                 status = 1
@@ -253,18 +257,61 @@ class DataManager():
         
         #transplants the ship's storage information into the ship's entry
         print("PDM: Getting Ship Store Data")
-        for transponder in self.fleetData: # TODO: Refactor this into calling user storage data once and then parsing locally instead
-            if "StoreId" in self.fleetData[transponder]:
-                print("PDM: Fetching Store of Ship "+transponder)
-                r = customGet("https://rest.fnar.net/storage/"+self.fleetData[transponder]["UserNameSubmitted"]+"/"+self.fleetData[transponder]["StoreId"], headers=self.getFioHeaders())
-                if r.status_code == 200:
-                    self.fleetData[transponder]["Storage"] = json.loads(r.content)
-                    print("PDM: Success!")
-                else:
-                    print("PDM: Failed")
+        for transponder in self.fleetData:
+            hasStoreId = "StoreId" in self.fleetData[transponder]
+            hasUsername = "UserNameSubmitted" in self.fleetData[transponder]
+            if hasStoreId and hasUsername:
+                if self.fleetData[transponder]["UserNameSubmitted"].upper() not in self.userData:
+                    print("PDM: No userData available for user "+self.fleetData[transponder]["UserNameSubmitted"]+" of transponder "+transponder)
                     continue
+                storageData = self.getUserStoreById(self.fleetData[transponder]["UserNameSubmitted"],self.fleetData[transponder]["StoreId"])
+                if storageData:
+                    self.fleetData[transponder]["Storage"] = storageData
+                    print("PDM: Ship "+transponder+" storage linked")
+                else:
+                    print("PDM: Ship "+transponder+" storage object not available")
+            else:
+                if not hasStoreId:
+                    print("PDM: Ship "+transponder+" does not possess a StorageId!")
+                if not hasUsername:
+                    print("PDM: Ship "+transponder+" does not possess a submission Username!") # TODO: fallback onto registered name if it exists in config. 
+                    # Possibly create an internal data structure that can be populated through external function calls if the calling program knows this data already (say, through the appData in a config file, which this module cannot otherwise utilise)
+
         print("PDM: Fleet Fetch Complete")
         return status
+    
+    def getUserStoreById(self,username,storeId):
+        username = username.upper()
+        if username not in self.userData:
+            return None
+        if 'storageData' not in self.userData[username]:
+            return None
+        for storage in self.userData[username]['storageData']:
+            if storage['StorageId'] == storeId:
+                return storage
+        return None
+
+    def fetchUserStorageData(self,username): #TODO: add a refresh=False argument to deal with intentionally refreshing stale data
+        username = username.upper()
+        if username not in self.userData:
+            if not self.fetchUserInfo(username):
+                print("PDM: Aborting Storage Fetch")
+                return False
+        print("PDM: Fetching User Storage Data: "+username)
+        r = customGet("https://rest.fnar.net/storage/"+username,headers=self.getFioHeaders())
+        if r.status_code in (200, 204):
+            print("PDM: Success!")    
+        else: 
+            print("PDM: Failed") 
+            return False
+        match r.status_code:
+            case 204:
+                print("PDM: No Storage Data for user")
+                self.userData[username]["storageData"] = []
+            case 200:
+                self.userData[username]["storageData"] = json.loads(r.content)
+        return True
+                
     
     def fetchUserInfo(self,username):
         print("PDM: Fetching User Info for "+username)
@@ -354,4 +401,5 @@ if __name__ == "__main__":
     pdm = DataManager()
     pdm.fetchStationData()
     pdm.fetchPlanetNameData()
+    pdm.fetchUserInfo("MysteriousWalrus")
     print("PDMTEST: "+ str(pdm.isLocation("Boucher")))
