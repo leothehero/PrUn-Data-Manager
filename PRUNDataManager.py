@@ -293,15 +293,19 @@ class DataManager():
     def fetchPlanetNameData(self):
         # NOTE: This function fetches solely the naturalId and Name pairs of planets! This is much faster than fetchPlanetFullData(), but less comprehensive.
         # It is recommended to avoid using fetchPlanetFullData() unless absolutely necessary, instead using fetchPlanetData() or searchForPlanet().
+        print("PDM: Fetching Planet Name Data")
         r = customGet("https://rest.fnar.net/planet/allplanets")
         if r.status_code != 200:
+            print("PDM: Failed")
             return False
+        print("PDM: Success!")
         c = json.loads(r.content)
         self.planetNIDs = {}
         self.planetNames = {}
         for element in c:
             self.planetNIDs[element["PlanetNaturalId"]] = element["PlanetName"]
             self.planetNames[element["PlanetName"]] = element["PlanetNaturalId"]
+        print("PDM: Planet Data Loaded")
         return True
     
     def fetchPlanetFullData(self):
@@ -310,12 +314,15 @@ class DataManager():
         return
     
     def fetchStationData(self):
+        print("PMD: Fetching Station Data")
         r = customGet("https://rest.fnar.net/exchange/station")
         if r.status_code != 200:
+            print("PDM: Failed")
             return False
+        print("PDM: Success!")
         self.CXdata = json.loads(r.content)
-
-
+        print("PDM: Station Data Loaded")
+        return True
 
     def getPlanetNameIndexes(self):
         if not self.planetNIDs:
@@ -323,6 +330,7 @@ class DataManager():
         return self.planetNIDs or {}, self.planetNames or {}
     
     def isPlanet(self,location):
+        location = location.title()
         if not self.planetNIDs:
             return True, True # Defaults to True so that offline function is not impeded.
         return location in self.planetNIDs, location in self.planetNames
@@ -339,8 +347,8 @@ class DataManager():
         return self.isStation(location) or (True in self.isPlanet(location))
 
 
-"""pdm = DataManager()
-pdm.fetchStationData()
-pdm.fetchPlanetNameData()
-print("PDMTEST: "+ str(pdm.isLocation("VH-331g")))
-sys.exit()"""
+if __name__ == "__main__":
+    pdm = DataManager()
+    pdm.fetchStationData()
+    pdm.fetchPlanetNameData()
+    print("PDMTEST: "+ str(pdm.isLocation("Boucher")))
