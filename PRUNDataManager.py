@@ -10,17 +10,6 @@ DEFAULTCONFIG = dict({
                 APPDATAFIELD: {},
             })
 
-def customGet(url, headers=None):
-    r = requests.Response()
-    for i in range(3):
-        try:
-            r = requests.get(url, headers = headers, timeout=10)
-            break;
-        except requests.exceptions.Timeout:
-            r.status_code = -1
-            print("PDM: Request Timeout, Loop "+str(i))
-    return r
-
 class DataManager():
     materialData = dict()
     fleetData = dict()
@@ -29,9 +18,11 @@ class DataManager():
     planetNIdToNameIndex = None
     planetNameToNIdIndex = None
     CXdata = None
+    timeout = 10
 
-    def __init__(self,configDict = {},defaultConfig = DEFAULTCONFIG):
+    def __init__(self,configDict = {},defaultConfig = DEFAULTCONFIG, timeout = 10):
         print("PDM: Initializing")
+        self.timeout = timeout
         self.configPath = configDict["ConfigPath"] if "ConfigPath" in configDict else None # Where to look for the config 
         self.statusBar = configDict["QtStatusBar"] if "QtStatusBar" in configDict else None # A tuple containing (the QtStatusBar object, Start Index), so that the PDM can manage notifications itself
         # NOTE: Right Now, the PDM is hardcoded with Qt modules in mind in this section. In the future, I want to have everything external to this module (Like Qt) be handled by an import of PDM.
@@ -57,9 +48,20 @@ class DataManager():
             "Authorization" : self.config["auth"],
             }
 
+    def customGet(self, url, headers=None):
+        r = requests.Response()
+        for i in range(3):
+            try:
+                r = requests.get(url, headers = headers, timeout=self.timeout)
+                break;
+            except requests.exceptions.Timeout:
+                r.status_code = -1
+                print("PDM: Request Timeout, Loop "+str(i))
+        return r
+
     def loadMaterialInformation(self):
         print("PDM: Fetching Materials")
-        r = customGet("https://rest.fnar.net/material/allmaterials")
+        r = self.customGet("https://rest.fnar.net/material/allmaterials")
         if r.status_code == 200:
             print("PDM: Material Fetch Success")
             rContent = json.loads(r.content)
@@ -127,7 +129,7 @@ class DataManager():
             self.authed = -1
             print("PDM: No Authentication Key In Config")
             return self.authed
-        r = customGet("https://rest.fnar.net/auth", headers=self.getFioHeaders())
+        r = self.customGet("https://rest.fnar.net/auth", headers=self.getFioHeaders())
         if r.status_code == 200:
             print("PDM: Success!")
             self.authed = 0
@@ -145,7 +147,7 @@ class DataManager():
 
     def fetchGroupData(self):
         print("PDM: Fetching Group Data")
-        r = customGet("https://rest.fnar.net/auth/group/"+self.config["group"])
+        r = self.customGet("https://rest.fnar.net/auth/group/"+self.config["group"])
         if r.status_code != 200:
             print("PDM: Fetch Failed: "+str(r.status_code))
             self.groupData = None
@@ -157,7 +159,7 @@ class DataManager():
     def fetchWorkforceNeeds(self):
         print("PDM: Fetching Workforce Needs")
         self.workerData = None
-        r = customGet("https://rest.fnar.net/global/workforceneeds")
+        r = self.customGet("https://rest.fnar.net/global/workforceneeds")
         if r.status_code != 200:
             print("PDM: Fetch Failed: "+str(r.status_code))
             return False
@@ -171,7 +173,7 @@ class DataManager():
         return True
 
     def getUserPlanetBurn(self,user,planet): # TODO: Complete
-        r = customGet("https://rest.fnar.net/workforce/"+user+"/"+planet, headers=self.getFioHeaders())
+        r = self.customGet("https://rest.fnar.net/workforce/"+user+"/"+planet, headers=self.getFioHeaders())
 
         raise NotImplementedError
 
@@ -230,7 +232,7 @@ class DataManager():
         for username in usernames:
             print("PDM: Fetching data for "+username)
             print("PDM: 1/3")
-            r = customGet("https://rest.fnar.net/ship/ships/"+username, headers=self.getFioHeaders())
+            r = self.customGet("https://rest.fnar.net/ship/ships/"+username, headers=self.getFioHeaders())
             if r.status_code not in (200,204):
                 status = 1
                 print("PDM: Aborting data fetch for "+username)
@@ -240,7 +242,7 @@ class DataManager():
             print("PDM: 2/3")
             self.fetchUserStorageData(username)
             print("PDM: 3/3")
-            r = customGet("https://rest.fnar.net/ship/flights/"+username, headers=self.getFioHeaders())
+            r = self.customGet("https://rest.fnar.net/ship/flights/"+username, headers=self.getFioHeaders())
             if r.status_code not in (200,204):
                 status = 1
                 continue
@@ -298,7 +300,7 @@ class DataManager():
                 print("PDM: Aborting Storage Fetch")
                 return False
         print("PDM: Fetching User Storage Data: "+username)
-        r = customGet("https://rest.fnar.net/storage/"+username,headers=self.getFioHeaders())
+        r = self.customGet("https://rest.fnar.net/storage/"+username,headers=self.getFioHeaders())
         if r.status_code in (200, 204):
             print("PDM: Success!")    
         else: 
@@ -315,7 +317,7 @@ class DataManager():
     
     def fetchUserInfo(self,username):
         print("PDM: Fetching User Info for "+username)
-        r = customGet("https://rest.fnar.net/user/"+username, headers=self.getFioHeaders())
+        r = self.customGet("https://rest.fnar.net/user/"+username, headers=self.getFioHeaders())
         if r.status_code == 200:
             print("PDM: Success!")
             self.userData[username.upper()] = json.loads(r.content)
@@ -344,7 +346,7 @@ class DataManager():
         # NOTE: This function fetches solely the naturalId and Name pairs of planets! This is much faster than fetchPlanetFullData(), but less comprehensive.
         # It is recommended to avoid using fetchPlanetFullData() unless absolutely necessary, instead using fetchPlanetData() or searchForPlanet().
         print("PDM: Fetching Planet Name Data")
-        r = customGet("https://rest.fnar.net/planet/allplanets")
+        r = self.customGet("https://rest.fnar.net/planet/allplanets")
         if r.status_code != 200:
             print("PDM: Failed")
             return False
@@ -365,7 +367,7 @@ class DataManager():
     
     def fetchStationData(self):
         print("PMD: Fetching Station Data")
-        r = customGet("https://rest.fnar.net/exchange/station")
+        r = self.customGet("https://rest.fnar.net/exchange/station")
         if r.status_code != 200:
             print("PDM: Failed")
             return False
