@@ -401,7 +401,7 @@ class DataManager():
             return name
         if name.upper() == (formattedName := self.CXdata[index]["NaturalId"]):
             return formattedName
-        if name.upper() == (formattedName := self.CXdata[index]["Name"]):
+        if name.upper() == (formattedName := self.CXdata[index]["Name"]).upper():
             return formattedName
         return
 
@@ -421,5 +421,5 @@ if __name__ == "__main__":
     pdm.fetchStationData()
     pdm.fetchPlanetNameData()
     pdm.fetchUserInfo("MysteriousWalrus")
-    print("PDMTEST: "+ str(pdm.isLocation("VH-331a")))
-    print(pdm.getPlanetNameFormat("PROMITOR"))
+    print("PDMTEST: "+ str(pdm.isLocation("Boucher")))
+    print(pdm.getPlanetNameFormat("boucher"))
