@@ -26,8 +26,8 @@ class DataManager():
     fleetData = dict()
     shipRegistrationIndex = dict()
     userData = dict()
-    planetNIDs = None
-    planetNames = None
+    planetNIdToNameIndex = None
+    planetNameToNIdIndex = None
     CXdata = None
 
     def __init__(self,configDict = {},defaultConfig = DEFAULTCONFIG):
@@ -350,11 +350,11 @@ class DataManager():
             return False
         print("PDM: Success!")
         c = json.loads(r.content)
-        self.planetNIDs = {}
-        self.planetNames = {}
+        self.planetNIdToNameIndex = {}
+        self.planetNameToNIdIndex = {}
         for element in c:
-            self.planetNIDs[element["PlanetNaturalId"]] = element["PlanetName"]
-            self.planetNames[element["PlanetName"]] = element["PlanetNaturalId"]
+            self.planetNIdToNameIndex[element["PlanetNaturalId"].upper()] = element["PlanetName"]
+            self.planetNameToNIdIndex[element["PlanetName"].upper()] = element["PlanetNaturalId"]
         print("PDM: Planet Data Loaded")
         return True
     
@@ -375,26 +375,45 @@ class DataManager():
         return True
 
     def getPlanetNameIndexes(self):
-        if not self.planetNIDs:
+        if not self.planetNIdToNameIndex:
             self.fetchPlanetNameData()
-        return self.planetNIDs or {}, self.planetNames or {}
+        return self.planetNIdToNameIndex or {}, self.planetNameToNIdIndex or {}
     
     def isPlanet(self,location):
-        location = location.title()
-        if not self.planetNIDs:
+        location = location.upper()
+        if not self.planetNIdToNameIndex:
             return True, True # Defaults to True so that offline function is not impeded.
-        return location in self.planetNIDs, location in self.planetNames
+        return location in self.planetNIdToNameIndex, location in self.planetNameToNIdIndex
     
+    def getPlanetNameFormat(self,name):
+        pNID, pn = self.isPlanet(name)
+        if not (pNID or pn):
+            return name
+        name = name.upper()
+        if pNID:
+            return self.planetNameToNIdIndex[self.planetNIdToNameIndex[name].upper()]
+        if pn:
+            return self.planetNIdToNameIndex[self.planetNameToNIdIndex[name].upper()]
+        
+    def getStationNameFormat(self,name):
+        tmpBool, index = self.isStation(name)
+        if not tmpBool:
+            return name
+        if name.upper() == (formattedName := self.CXdata[index]["NaturalId"]):
+            return formattedName
+        if name.upper() == (formattedName := self.CXdata[index]["Name"]):
+            return formattedName
+        return
 
     def isStation(self, location):
-        for cx in self.CXdata:
-            if location.upper() in (cx["NaturalId"],cx["Name"].upper()):
-                return True
-        return False
+        for i in range(len(self.CXdata)):
+            if location.upper() in (self.CXdata[i]["NaturalId"],self.CXdata[i]["Name"].upper()):
+                return True, i
+        return False, -1
 
 
     def isLocation(self, location):
-        return self.isStation(location) or (True in self.isPlanet(location))
+        return self.isStation(location)[0] or (True in self.isPlanet(location))
 
 
 if __name__ == "__main__":
@@ -402,4 +421,5 @@ if __name__ == "__main__":
     pdm.fetchStationData()
     pdm.fetchPlanetNameData()
     pdm.fetchUserInfo("MysteriousWalrus")
-    print("PDMTEST: "+ str(pdm.isLocation("Boucher")))
+    print("PDMTEST: "+ str(pdm.isLocation("VH-331a")))
+    print(pdm.getPlanetNameFormat("PROMITOR"))
