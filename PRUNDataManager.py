@@ -19,6 +19,7 @@ class DataManager():
     planetNameToNIdIndex = None
     CXdata = None
     timeout = 10
+    userDict = None
 
     def __init__(self,configDict = {},defaultConfig = DEFAULTCONFIG, timeout = 10):
         print("PDM: Initializing")
@@ -325,22 +326,29 @@ class DataManager():
         print("PDM: Failed")
         return False
     
-    def fetchUserList(self):
+    def fetchUserList(self) -> bool: # Fix
         print("PDM: Fetching User List")
         r = self.customGet("https://rest.fnar.net/user/allusers", headers=self.getFioHeaders())
         if r.status_code != 200:
             print("PDM: Failed")
             return False
-        self.userList = json.loads(r.content)
-        for i in range(self.userList):
-            self.userList[i] = self.userList[i].upper()
+        print("PDM: Success!")
+        tmpList = json.loads(r.content)
+        self.userDict = dict()
+        for element in tmpList:
+            self.userDict[element.upper()] = element
         return True
+    
+    def isUser(self, username) -> tuple[bool, str]:
+        if self.userDict == None:
+            return True, username
+        return username.upper() in self.userDict, self.userDict.get(username.upper(), username)
 
-    def getUserInfo(self,username):
+    def getUserInfo(self,username) -> dict:
         if username.upper() in self.userData:
             return self.userData[username.upper()]
         else:
-            return self.userData[username.upper()] if self.fetchUserInfo(username) else {}
+            return {}
     
     def getFleetData(self):
         return self.fleetData
