@@ -324,6 +324,17 @@ class DataManager():
             return True
         print("PDM: Failed")
         return False
+    
+    def fetchUserList(self):
+        print("PDM: Fetching User List")
+        r = self.customGet("https://rest.fnar.net/user/allusers", headers=self.getFioHeaders())
+        if r.status_code != 200:
+            print("PDM: Failed")
+            return False
+        self.userList = json.loads(r.content)
+        for i in range(self.userList):
+            self.userList[i] = self.userList[i].upper()
+        return True
 
     def getUserInfo(self,username):
         if username.upper() in self.userData:
