@@ -178,7 +178,6 @@ class DataManager():
 
         raise NotImplementedError
 
-
     def getTrackedPlanets(self): # TODO: Rework to be less application specific. Move field under config applicationData field
         return self.config["planets"]
 
@@ -197,8 +196,8 @@ class DataManager():
         return False
     
     def createAppData(self,field,reset = False):
-        print("PDM: Creating New AppData field: "+field)
         if reset or field not in self.config[APPDATAFIELD]:
+            print("PDM: "+"Creating New" if not reset else "Resetting"+" AppData field: "+field)
             self.config[APPDATAFIELD][field] = None
             return True
         return False
@@ -314,8 +313,7 @@ class DataManager():
             case 200:
                 self.userData[username]["storageData"] = json.loads(r.content)
         return True
-                
-    
+
     def fetchUserInfo(self,username):
         print("PDM: Fetching User Info for "+username)
         r = self.customGet("https://rest.fnar.net/user/"+username, headers=self.getFioHeaders())
@@ -431,7 +429,6 @@ class DataManager():
             if location.upper() in (self.CXdata[i]["NaturalId"],self.CXdata[i]["Name"].upper()):
                 return True, i
         return False, -1
-
 
     def isLocation(self, location):
         return self.isStation(location)[0] or (True in self.isPlanet(location))
