@@ -433,7 +433,9 @@ class DataManager():
     def isLocation(self, location):
         return self.isStation(location)[0] or (True in self.isPlanet(location))
 
-
+    def setAuthToken(self, authToken):
+        self.config["auth"] = authToken
+        
 if __name__ == "__main__":
     pdm = DataManager()
     pdm.fetchStationData()
