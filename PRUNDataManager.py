@@ -57,7 +57,7 @@ class DataManager():
                 break;
             except requests.exceptions.Timeout:
                 r.status_code = -1
-                print("PDM: GET request attempt "+str(i+1)+" timed out!")
+                print("[FAIL] PDM: GET request attempt "+str(i+1)+" timed out!")
         return r
 
     def loadMaterialInformation(self):
