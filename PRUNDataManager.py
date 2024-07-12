@@ -51,7 +51,7 @@ class DataManager():
 
     def customGet(self, url, headers=None):
         r = requests.Response()
-        for i in range(3):
+        for i in range(5):
             try:
                 r = requests.get(url, headers = headers, timeout=self.timeout)
                 break;
@@ -64,7 +64,6 @@ class DataManager():
         print("PDM: Fetching Materials")
         r = self.customGet("https://rest.fnar.net/material/allmaterials")
         if r.status_code == 200:
-            print("PDM: Material Fetch Success")
             rContent = json.loads(r.content)
             for material in rContent:
                 self.materialData[material["Ticker"]] = material
@@ -132,7 +131,6 @@ class DataManager():
             return self.authed
         r = self.customGet("https://rest.fnar.net/auth", headers=self.getFioHeaders())
         if r.status_code == 200:
-            print("PDM: Success!")
             self.authed = 0
             self.user = r.text
         else:
@@ -150,11 +148,10 @@ class DataManager():
         print("PDM: Fetching Group Data")
         r = self.customGet("https://rest.fnar.net/auth/group/"+self.config["group"])
         if r.status_code != 200:
-            print("PDM: Fetch Failed: "+str(r.status_code))
+            print("PDM: Group Data Fetch Failed: "+str(r.status_code))
             self.groupData = None
             return False
         self.groupData = json.loads(r.content)
-        print("PDM: Group Data Loaded")
         return True
 
     def fetchWorkforceNeeds(self):
@@ -170,7 +167,6 @@ class DataManager():
             self.workerData[entry["WorkforceType"]] = dict()
             for need in entry["Needs"]:
                 self.workerData[entry["WorkforceType"]][need["MaterialTicker"]] = need["Amount"]
-        print("PDM: Workforce Need Data Loaded")
         return True
 
     def getUserPlanetBurn(self,user,planet): # TODO: Complete
@@ -264,7 +260,7 @@ class DataManager():
             hasUsername = "UserNameSubmitted" in self.fleetData[transponder]
             if hasStoreId and hasUsername:
                 if self.fleetData[transponder]["UserNameSubmitted"].upper() not in self.userData:
-                    print("PDM: No userData available for user "+self.fleetData[transponder]["UserNameSubmitted"]+" of transponder "+transponder)
+                    print("PDM: No userData available for transponder "+transponder+" of user "+self.fleetData[transponder]["UserNameSubmitted"])
                     continue
                 storageData = self.getUserStoreById(self.fleetData[transponder]["UserNameSubmitted"],self.fleetData[transponder]["StoreId"])
                 if storageData:
@@ -301,9 +297,7 @@ class DataManager():
                 return False
         print("PDM: Fetching User Storage Data: "+username)
         r = self.customGet("https://rest.fnar.net/storage/"+username,headers=self.getFioHeaders())
-        if r.status_code in (200, 204):
-            print("PDM: Success!")    
-        else: 
+        if r.status_code not in (200, 204):
             print("PDM: Failed") 
             return False
         match r.status_code:
@@ -318,7 +312,6 @@ class DataManager():
         print("PDM: Fetching User Info for "+username)
         r = self.customGet("https://rest.fnar.net/user/"+username, headers=self.getFioHeaders())
         if r.status_code == 200:
-            print("PDM: Success!")
             self.userData[username.upper()] = json.loads(r.content)
             return True
         print("PDM: Failed")
@@ -330,7 +323,6 @@ class DataManager():
         if r.status_code != 200:
             print("PDM: Failed")
             return False
-        print("PDM: Success!")
         tmpList = json.loads(r.content)
         self.userDict = dict()
         for element in tmpList:
@@ -351,8 +343,12 @@ class DataManager():
     def getFleetData(self):
         return self.fleetData
 
-    def getShipData(self, transponder):
-        return self.fleetData[transponder] if transponder in self.fleetData else {}
+    def getShipData(self, transponder, username = None):
+        retVal = self.fleetData[transponder] if transponder in self.fleetData else {}
+        if username and not retVal:
+            self.fetchFleetsByUsers(set((username,)))
+            retVal = self.fleetData[transponder] if transponder in self.fleetData else {}
+        return retVal
 
     def updateAllData(self):
         print("PDM: Refreshing All Data")
@@ -367,14 +363,12 @@ class DataManager():
         if r.status_code != 200:
             print("PDM: Failed")
             return False
-        print("PDM: Success!")
         c = json.loads(r.content)
         self.planetNIdToNameIndex = {}
         self.planetNameToNIdIndex = {}
         for element in c:
             self.planetNIdToNameIndex[element["PlanetNaturalId"].upper()] = element["PlanetName"]
             self.planetNameToNIdIndex[element["PlanetName"].upper()] = element["PlanetNaturalId"]
-        print("PDM: Planet Data Loaded")
         return True
     
     def fetchPlanetFullData(self):
@@ -388,9 +382,7 @@ class DataManager():
         if r.status_code != 200:
             print("PDM: Failed")
             return False
-        print("PDM: Success!")
         self.CXdata = json.loads(r.content)
-        print("PDM: Station Data Loaded")
         return True
 
     def getPlanetNameIndexes(self):
