@@ -1,6 +1,8 @@
 import sys
 import requests, json
 
+
+version = "0.1.0"
 APPDATAFIELD = "applicationData"
 
 # TODO: Find a way to recommend that calling applications create and supply their own default configs that are customised to the app use.
@@ -22,7 +24,7 @@ class DataManager():
     userDict = None
 
     def __init__(self,configDict = {},defaultConfig = DEFAULTCONFIG, timeout = 10):
-        print("PDM: Initializing")
+        print("PDM: Version "+version+" Initializing")
         self.timeout = timeout
         self.configPath = configDict["ConfigPath"] if "ConfigPath" in configDict else None # Where to look for the config 
         self.statusBar = configDict["QtStatusBar"] if "QtStatusBar" in configDict else None # A tuple containing (the QtStatusBar object, Start Index), so that the PDM can manage notifications itself
